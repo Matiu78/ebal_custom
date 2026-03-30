@@ -1,0 +1,753 @@
+<odoo>
+    <template id="report_workorder_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id">
+                    <style type="text/css">
+                        .section-title {
+                            background-color: rgba(11, 36, 116, 0.65);
+                            color: #ffffff;
+                            font-weight: bold;
+                            padding: 6px 10px;
+                            border-radius: 10px;
+                            margin-bottom: 6px;
+                            text-align: center;
+                        }
+
+                        .section-title.big {
+                            font-size: 20pt;
+                            letter-spacing: 1px;
+                        }
+
+                        .section-title.medium {
+                            font-size: 16pt;
+                        }
+
+                        .filled-text {
+                            background: rgba(0,0,0,0.08);
+                            border-radius: 8px;
+                            padding: 6px 8px;
+                            margin-top: 6px;
+                            line-height: 1.3;
+                        }
+                    </style>
+
+                    <div class="page"
+                        style="margin-left:30px; margin-right:30px; color:#0b2474;">
+
+                        <!-- ================= ENCABEZADO ================= -->
+                        <table style="width:100%; border-collapse:collapse;">
+                            <tr>
+                                <!-- IMAGEN -->
+                                <td style="width:50%; vertical-align:middle; text-align:center;">
+                                    <t t-if="o.env.company.report_header_image">
+                                        <img t-attf-src="data:image/*;base64,{{ o.env.company.report_header_image or '' }}"
+                                            style="width: 100%; height: auto;"/>
+                                    </t>
+                                </td>
+
+                                <!-- TEXTO -->
+                                <td style="width:50%; text-align:center; vertical-align:middle; text-align:center;">
+                                    <strong style="font-size:20pt;"><t t-esc=" o.env.company.name"/></strong><br/>
+                                    <strong style="font-size:18pt;">TALLERES</strong><br/>
+
+                                    <div style="line-height:1.15; font-size:14pt;">
+                                        Reparación de motores de arranque, alternador.<br/>
+                                        Todo sistema eléctrico de audio, también diagnóstico computarizado, limpieza de inyectores.<br/>
+                                        Mecánica Automotriz en General.<br/>
+                                        Análisis de gases para Cuenca Aire.<br/>
+                                        <strong>Dir.:</strong> <t t-esc=" o.env.company.street"/> Y <t t-esc=" o.env.company.street2"/><br/>
+                                        <strong>Telf.:</strong> <t t-esc=" o.env.company.phone"/> | <strong>Cel.:</strong> <t t-esc=" o.env.company.mobile"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+
+                        <!-- ================= DATOS VEHICULO Y DUEÑO ================= -->
+                        <div style="width:100%; border-bottom:2px solid #000; padding-bottom:6px;">
+
+                            <!-- TITULO + NUMERO -->
+                            <div style="text-align:center; font-size:26pt; font-weight:bold;">
+                                ORDEN DE TRABAJO
+                                <span style="float:right; color:red; font-size:18pt;">
+                                    <t t-esc="o.name"/>
+                                </span>
+                            </div>
+
+                            <!-- FECHAS -->
+                            <table style="width:100%; font-size:14pt; margin-top:6px;">
+                                <tr>
+                                    <td style="width:50%;">
+                                        <b>Fecha de Ingreso:</b>
+                                        <span t-esc="o.date_in"/>
+                                    </td>
+                                    <td style="width:50%; text-align:right;">
+                                        <b>Fecha de Entrega:</b>
+                                        <span t-esc="o.date_out"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- ================= DATOS CLIENTE / VEHICULO ================= -->
+                        <table style="width:100%; margin-top:8px; font-size:16pt;">
+                            <tr>
+                                <!-- DATOS CLIENTE -->
+                                <td style="width:50%; vertical-align:top; padding: 6px 10px;">
+                                    <div class="section-title medium">
+                                        DATOS CLIENTE
+                                    </div>
+                                    <p><b>Nombre / Apellido:</b> <t t-esc="o.partner_id.name"/></p>
+                                    <p><b>Telf. / Cel.:</b> <t t-esc="o.partner_id.phone or o.partner_id.mobile"/></p>
+                                    <p><b>C.I / R.U.C:</b> <t t-esc="o.partner_id.vat"/></p>
+                                </td>
+
+                                <!-- DATOS VEHICULO -->
+                                <td style="width:50%; vertical-align:top; padding: 6px 10px;">
+                                    <div class="section-title medium">
+                                        VEHÍCULO
+                                    </div>
+                                    <p><b>Modelo / Marca:</b>
+                                        <t t-esc="o.model.name"/> /
+                                        <t t-esc="o.brand.name"/>
+                                    </p>
+                                    <p><b>Color:</b> <t t-esc="o.color"/>
+                                    <![CDATA[ ]]><![CDATA[ ]]> <b>Placa:</b> <t t-esc="o.plate"/>
+                                    <![CDATA[ ]]><![CDATA[ ]]> <b>Kilometraje:</b> <t t-esc="o.mileage"/>
+                                    </p>
+                                    <p><b>N° Motor:</b> <t t-esc="o.engine_number"/>
+                                    <![CDATA[ ]]><![CDATA[ ]]> <b>N° Chasis:</b> <t t-esc="o.chassis_number"/>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ================= VALORES ================= -->
+                        <table style="width:100%; margin-top:6px; font-size:18pt;">
+                            <tr>
+                                <td style="text-align:center;"><b>TOTAL $:</b> 
+                                    <span class="filled-text">
+                                        <t t-esc="o.amount_order_lines"/>
+                                    </span>
+                                </td>
+                                <td style="text-align:center;"><b>ABONA $:</b> 
+                                    <span class="filled-text">
+                                        <t t-esc="o.amount_order_lines - o.amount_order_due"/>
+                                    </span>
+                                </td>
+                                <td style="text-align:center;"><b>SALDO $:</b> 
+                                    <span class="filled-text">
+                                        <t t-esc="o.amount_order_due"/>
+                                    </span>
+                                </td>
+                                <td style="text-align:center;"><b>CLAVES:</b> 
+                                    <span class="filled-text">
+                                        <t t-if="o.key_code">
+                                            <t t-esc="o.key_code"/>
+                                        </t>
+                                        <t t-else="">
+                                            _____
+                                        </t>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ================= CHECK LIST ================= -->
+                        <table style="width:100%; font-size:13pt; border-top:1px solid #000; margin-top:20px;">
+                            <tr>
+                                <!-- COLUMNA IZQUIERDA -->
+                                <td style="width:33%; vertical-align:top;">
+                                    <table style="margin: 0 auto;">
+                                        <tr><td>RADIO</td><td><t t-if="o.chk_radio">☑</t><t t-if="not o.chk_radio">☐</t></td></tr>
+                                        <tr><td>PLUMAS</td><td><t t-if="o.chk_plumas">☑</t><t t-if="not o.chk_plumas">☐</t></td></tr>
+                                        <tr><td>ENCENDEDOR</td><td><t t-if="o.chk_encendedor">☑</t><t t-if="not o.chk_encendedor">☐</t></td></tr>
+                                        <tr><td>TAPACUBOS</td><td><t t-if="o.chk_tapacubos">☑</t><t t-if="not o.chk_tapacubos">☐</t></td></tr>
+                                        <tr><td>BRAZOS</td><td><t t-if="o.chk_brazos">☑</t><t t-if="not o.chk_brazos">☐</t></td></tr>
+                                        <tr><td>MOQUETAS</td><td><t t-if="o.chk_moquetas">☑</t><t t-if="not o.chk_moquetas">☐</t></td></tr>
+                                        <tr><td>TAPA GASOLINA</td><td><t t-if="o.chk_tapa_gasolina">☑</t><t t-if="not o.chk_tapa_gasolina">☐</t></td></tr>
+                                    </table>
+                                </td>
+
+                                <!-- COLUMNA CENTRAL -->
+                                <td style="width:33%; vertical-align:top;">
+                                    <table style="margin: 0 auto;">
+                                        <tr><td>ANTENA</td><td><t t-if="o.chk_antena">☑</t><t t-if="not o.chk_antena">☐</t></td></tr>
+                                        <tr><td>EMBLEMAS</td><td><t t-if="o.chk_emblemas">☑</t><t t-if="not o.chk_emblemas">☐</t></td></tr>
+                                        <tr><td>ESPEJOS</td><td><t t-if="o.chk_espejos">☑</t><t t-if="not o.chk_espejos">☐</t></td></tr>
+                                        <tr><td>LLAVE DE RUEDAS</td><td><t t-if="o.chk_llave_ruedas">☑</t><t t-if="not o.chk_llave_ruedas">☐</t></td></tr>
+                                        <tr><td>GATA</td><td><t t-if="o.chk_gata">☑</t><t t-if="not o.chk_gata">☐</t></td></tr>
+                                        <tr><td>LÁMPARAS POST.</td><td><t t-if="o.chk_lamparas_post">☑</t><t t-if="not o.chk_lamparas_post">☐</t></td></tr>
+                                        <tr><td>LAMPARAS FRONT.</td><td><t t-if="o.chk_lamparas_front">☑</t><t t-if="not o.chk_lamparas_front">☐</t></td></tr>
+                                    </table>
+                                </td>
+
+                                <!-- COLUMNA DERECHA -->
+                                <td style="width:33%; vertical-align:top;">
+                                    <table style="margin: 0 auto;">
+                                        <tr><td>HERRAMIENTAS</td><td><t t-if="o.chk_herramientas">☑</t><t t-if="not o.chk_herramientas">☐</t></td></tr>
+                                        <tr><td>LLANTA EMERGENCIA</td><td><t t-if="o.chk_llanta_emergencia">☑</t><t t-if="not o.chk_llanta_emergencia">☐</t></td></tr>
+                                        <tr><td>DIRECCIONALES</td><td><t t-if="o.chk_direccionales">☑</t><t t-if="not o.chk_direccionales">☐</t></td></tr>
+                                        <tr><td>GAFAS</td><td><t t-if="o.chk_gafas">☑</t><t t-if="not o.chk_gafas">☐</t></td></tr>
+                                        <tr><td>CASSETES</td><td><t t-if="o.chk_cassettes">☑</t><t t-if="not o.chk_cassettes">☐</t></td></tr>
+                                        <tr><td>CD</td><td><t t-if="o.chk_cd">☑</t><t t-if="not o.chk_cd">☐</t></td></tr>
+                                    </table>
+
+                                    <!-- NIVEL COMBUSTIBLE -->
+                                    <div style="margin-top:10px; font-weight:bold;">
+                                        Nivel de combustible:
+                                        <span t-if="o.fuel_level == 'e'">E</span>
+                                        <span t-if="o.fuel_level == '1/4'">¼</span>
+                                        <span t-if="o.fuel_level == '1/2'">½</span>
+                                        <span t-if="o.fuel_level == '3/4'">¾</span>
+                                        <span t-if="o.fuel_level == 'f'">F</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <!-- ================= TRABAJOS SOLICITADOS ================= -->
+                        <div class="section-title medium" style="margin-top:14px;">
+                            TRABAJOS SOLICITADOS
+                        </div>
+                        <div style="font-size:16pt;">
+                            <!-- ================= PROBLEMAS REPORTADO ================= -->
+                            <div style="margin-top:8px;">
+                                <div style="font-weight:bold;">
+                                    PROBLEMAS REPORTADO:
+                                </div>
+
+                                <t t-if="o.problem_reported">
+                                    <div class="filled-text">
+                                        <t t-esc="o.problem_reported"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div style="border-bottom:1px solid #000; height:18px;"></div>
+                                    <div style="border-bottom:1px solid #000; height:18px;"></div>
+                                    <div style="border-bottom:1px solid #000; height:18px;"></div>
+                                </t>
+                            </div>
+
+                            <!-- ================= CAUSA POSIBLE ================= -->
+                            <div style="margin-top:10px;">
+                                <div style="font-weight:bold;">
+                                    CAUSA POSIBLE
+                                </div>
+
+                                <t t-if="o.possible_cause">
+                                    <div class="filled-text">
+                                        <t t-esc="o.possible_cause"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div style="border-bottom:1px solid #000; height:18px;"></div>
+                                    <div style="border-bottom:1px solid #000; height:18px;"></div>
+                                </t>
+                            </div>
+
+                            <!-- ================= SOLUCIÓN ================= -->
+                            <div style="margin-top:10px;">
+                                <div style="font-weight:bold;">
+                                    SOLUCIÓN
+                                </div>
+
+                                <t t-if="o.solution">
+                                    <div class="filled-text">
+                                        <t t-esc="o.solution"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div style="border-bottom:1px solid #000; height:18px;"></div>
+                                    <div style="border-bottom:1px solid #000; height:18px;"></div>
+                                    <div style="border-bottom:1px solid #000; height:18px;"></div>
+                                </t>
+                            </div>
+
+                        </div>
+
+                        <!-- ================= CONDICIONES DE TRABAJO ================= -->
+                        <div>
+                            <div class="section-title medium"
+                                style="margin-top:20px; text-align:left;">
+                                CONDICIONES DE TRABAJO
+                            </div>
+
+                            <table style="width:100%; font-size:12pt;">
+                                <!-- BLOQUE SUPERIOR -->
+                                <tr>
+                                    <!-- TEXTO -->
+                                    <td style="width:70%; vertical-align:top; padding-right:2px;">
+                                        <ul style="
+                                            padding-left:12px;
+                                            text-align:justify;
+                                            margin:0;
+                                            line-height:1.05;
+                                        ">
+                                            <li style="margin:0; padding:0;">
+                                                Todo trabajo será cancelado de contado.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                El Cliente retirará su vehículo hasta 24 horas después de terminado el trabajo; caso contrario,
+                                                cancelará $3.00 diarios por concepto de bodegaje que será facturado en la planilla final.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                El taller no se responsabiliza por objetos personales o accesorios del vehículo no declarados
+                                                o inventariados en la Orden de Trabajo.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                El Cliente autoriza expresamente a <strong>CAR-ELECTRONIC</strong> a realizar los trabajos descritos,
+                                                adicionales, ocultos y/o conexos; así como a utilizar partes, repuestos y materiales necesarios
+                                                para la solución definitiva de los problemas, comprometiéndose a cancelar todos los costos facturados.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                El Cliente autoriza al Taller a efectuar pruebas de comprobación técnico-mecánicas u otras según
+                                                la naturaleza del trabajo en el vehículo por calles y carreteras públicas, así como el envío del
+                                                vehículo a otros talleres para trabajos que no se efectúen regularmente y que no sean de su especialidad.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                El taller no se responsabiliza por la inexistencia en el mercado de repuestos, partes o materiales necesarios.
+                                            </li>
+                                        </ul>
+                                    </td>
+
+                                    <!-- IMAGEN -->
+                                    <td style="width:30%; vertical-align:top; text-align:center; padding-top:5s0px;">
+                                        <img t-attf-src="data:image/*;base64,{{ o.env.company.report_watermark }}"
+                                            style="width:100%; max-width:300px;" />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2" style="padding-top:6px;">
+                                        <ul style="
+                                            padding-left:12px;
+                                            text-align:justify;
+                                            margin:0;
+                                            line-height:1.05;
+                                        ">
+                                            <li style="margin:0; padding:0;">
+                                                El Taller no garantiza trabajos realizados con repuestos que no sean originales o de marca autorizada.
+                                                Si el cliente solicita o proporciona repuestos distintos, será bajo su exclusiva responsabilidad
+                                                respecto a origen, calidad, funcionamiento y duración.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                El Taller no se responsabiliza por el servicio técnico, reparaciones, uso de componentes o repuestos
+                                                anteriores y ajenos a la presente Orden de Trabajo.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                El Cliente se somete a los criterios técnicos de <strong>CAR-ELECTRONIC</strong>, aceptando las condiciones
+                                                pertinentes, aun cuando estas no reflejen exactamente lo solicitado inicialmente.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                La empresa estimará un presupuesto referencial del valor de los trabajos, el cual podrá variar de acuerdo
+                                                con insumos, repuestos, mano de obra u otros factores.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                El Taller es responsable del vehículo únicamente mientras este se encuentre siendo objeto de trabajo y
+                                                reparación dentro de sus instalaciones; en caso de suscitarse algún accidente, el Taller responderá por
+                                                cada incidente de forma específica.
+                                            </li>
+
+                                            <li style="margin:0; padding:0;">
+                                                Si el vehículo del cliente se encuentra en malas condiciones o sufre daños por mal uso u objetos olvidados
+                                                en su interior que provoquen daños al vehículo, el Taller no cubrirá ni responderá por dichas situaciones.
+                                                Asimismo, la empresa no se hará responsable de los daños en el vehículo cuando el cliente deje abandonado
+                                                el mismo en los talleres fuera del plazo establecido.
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- ================= AUTORIZACIÓN Y FIRMAS ================= -->
+                        <div style="margin-top:18px;">
+
+                            <!-- TEXTO AUTORIZACIÓN -->
+                            <div style="
+                                background:#0b2474;
+                                color:#fff;
+                                padding:1px 3px;
+                                font-weight:bold;
+                                text-align:center;
+                                border-radius:4px;
+                                font-size:12pt;
+                            ">
+                                Autorizo a Car-Electronic la realización de los trabajos descritos y me sujeto
+                                expresamente sin reserva a mi favor a las condiciones aquí descritas
+                            </div>
+
+                            <!-- FIRMAS -->
+                            <br/>
+                            <table style="width:100%; margin-top:30px; text-align:center; font-size:18pt;">
+                                <tr>
+                                    <!-- FIRMA CLIENTE -->
+                                    <td style="width:50%;">
+                                        <t t-if="o.env.company.report_signature">
+                                            <br/><br/><br/>
+                                        </t>
+                                        <div style="border-top:1px solid #000; width:80%; margin:0 auto;"></div>
+                                        <div style="margin-top:4px; font-weight:bold;">
+                                            FIRMA CLIENTE
+                                        </div>
+                                    </td>
+
+                                    <!-- FIRMA EMPRESA -->
+                                    <td style="width:50%; text-align:center; vertical-align:bottom;">
+
+                                        <!-- Imagen firma empresa -->
+                                        <t t-if="o.env.company.report_signature">
+                                            <img t-attf-src="data:image/*;base64,{{ o.env.company.report_signature }}"
+                                                style="height:100px; margin-bottom:5px;"/>
+                                        </t>
+
+                                        <!-- Línea -->
+                                        <div style="border-top:1px solid #000; width:80%; margin:0 auto;"></div>
+
+                                        <!-- Nombre empresa -->
+                                        <div style="margin-top:4px; font-weight:bold;">
+                                            <t t-esc="o.env.company.name"/>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_workorder" model="report.paperformat">
+        <field name="name">A4 Workorder</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">2</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">2</field>
+        <field name="margin_right">2</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">2</field>
+        <field name="dpi">130</field>
+    </record>
+
+    <record id="action_report_workorder" model="ir.actions.report">
+        <field name="name">Orden de Trabajo</field>
+        <field name="model">mechanic.workorder</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ebal_mechanic.report_workorder_document</field>
+        <field name="report_file">ebal_mechanic.report_workorder_document</field>
+        <field name="paperformat_id" ref="ebal_mechanic.paperformat_workorder"/>
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="action_report_workorder" model="ir.actions.report">
+        <field name="paperformat_id" ref="ebal_mechanic.paperformat_workorder"/>
+    </record>
+
+    <template id="report_quotation_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id">
+                    <style type="text/css">
+                        .section-title {
+                            background-color: rgba(11, 36, 116, 0.65);
+                            color: #ffffff;
+                            font-weight: bold;
+                            padding: 6px 10px;
+                            border-radius: 10px;
+                            margin-bottom: 6px;
+                            text-align: center;
+                        }
+
+                        .section-title.big {
+                            font-size: 20pt;
+                            letter-spacing: 1px;
+                        }
+
+                        .section-title.medium {
+                            font-size: 16pt;
+                        }
+
+                        .filled-text {
+                            background: rgba(0,0,0,0.08);
+                            border-radius: 8px;
+                            padding: 6px 8px;
+                            margin-top: 6px;
+                            line-height: 1.3;
+                        }
+                    </style>
+
+                    <div class="page"
+                        style="margin-left:30px; margin-right:30px; color:#0b2474;">
+
+                        <!-- ================= ENCABEZADO ================= -->
+                        <table style="width:100%; border-collapse:collapse;">
+                            <tr>
+                                <!-- IMAGEN -->
+                                <td style="width:50%; vertical-align:middle; text-align:center;">
+                                    <t t-if="o.env.company.report_header_image">
+                                        <img t-attf-src="data:image/*;base64,{{ o.env.company.report_header_image or '' }}"
+                                            style="width: 100%; height: auto;"/>
+                                    </t>
+                                </td>
+
+                                <!-- TEXTO -->
+                                <td style="width:50%; text-align:center; vertical-align:middle; text-align:center;">
+                                    <strong style="font-size:20pt;"><t t-esc=" o.env.company.name"/></strong><br/>
+                                    <strong style="font-size:18pt;">TALLERES</strong><br/>
+
+                                    <div style="line-height:1.15; font-size:14pt;">
+                                        Reparación de motores de arranque, alternador.<br/>
+                                        Todo sistema eléctrico de audio, también diagnóstico computarizado, limpieza de inyectores.<br/>
+                                        Mecánica Automotriz en General.<br/>
+                                        Análisis de gases para Cuenca Aire.<br/>
+                                        <strong>Dir.:</strong> <t t-esc=" o.env.company.street"/> Y <t t-esc=" o.env.company.street2"/><br/>
+                                        <strong>Telf.:</strong> <t t-esc=" o.env.company.phone"/> | <strong>Cel.:</strong> <t t-esc=" o.env.company.mobile"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+
+                        <!-- ================= DATOS VEHICULO Y DUEÑO ================= -->
+                        <div style="width:100%; border-bottom:2px solid #000; padding-bottom:6px;">
+
+                            <!-- TITULO + NUMERO -->
+                            <div style="text-align:center; font-size:26pt; font-weight:bold;">
+                                ORDEN DE TRABAJO
+                                <span style="float:right; color:red; font-size:18pt;">
+                                    <t t-esc="o.name"/>
+                                </span>
+                            </div>
+
+                            <!-- FECHAS -->
+                            <table style="width:100%; font-size:14pt; margin-top:6px;">
+                                <tr>
+                                    <td style="width:50%;">
+                                        <b>Fecha de Ingreso:</b>
+                                        <span t-esc="o.date_in"/>
+                                    </td>
+                                    <td style="width:50%; text-align:right;">
+                                        <b>Fecha de Entrega:</b>
+                                        <span t-esc="o.date_out"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- ================= DATOS CLIENTE / VEHICULO ================= -->
+                        <table style="width:100%; margin-top:8px; font-size:16pt;">
+                            <tr>
+                                <!-- DATOS CLIENTE -->
+                                <td style="width:50%; vertical-align:top; padding: 6px 10px;">
+                                    <div class="section-title medium">
+                                        DATOS CLIENTE
+                                    </div>
+                                    <p><b>Nombre / Apellido:</b> <t t-esc="o.partner_id.name"/></p>
+                                    <p><b>Telf. / Cel.:</b> <t t-esc="o.partner_id.phone or o.partner_id.mobile"/></p>
+                                    <p><b>C.I / R.U.C:</b> <t t-esc="o.partner_id.vat"/></p>
+                                </td>
+
+                                <!-- DATOS VEHICULO -->
+                                <td style="width:50%; vertical-align:top; padding: 6px 10px;">
+                                    <div class="section-title medium">
+                                        VEHÍCULO
+                                    </div>
+                                    <p><b>Modelo / Marca:</b>
+                                        <t t-esc="o.model.name"/> /
+                                        <t t-esc="o.brand.name"/>
+                                    </p>
+                                    <p><b>Color:</b> <t t-esc="o.color"/>
+                                    <![CDATA[ ]]><![CDATA[ ]]> <b>Placa:</b> <t t-esc="o.plate"/>
+                                    <![CDATA[ ]]><![CDATA[ ]]> <b>Kilometraje:</b> <t t-esc="o.mileage"/>
+                                    </p>
+                                    <p><b>N° Motor:</b> <t t-esc="o.engine_number"/>
+                                    <![CDATA[ ]]><![CDATA[ ]]> <b>N° Chasis:</b> <t t-esc="o.chassis_number"/>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ================= VALORES ================= -->
+                        <table style="width:100%; margin-top:6px; font-size:18pt;">
+                            <tr>
+                                <td style="text-align:center;"><b>TOTAL $:</b> 
+                                    <span class="filled-text">
+                                        <t t-esc="o.amount_order_lines"/>
+                                    </span>
+                                </td>
+                                <td style="text-align:center;"><b>ABONA $:</b> 
+                                    <span class="filled-text">
+                                        <t t-esc="o.amount_order_lines - o.amount_order_due"/>
+                                    </span>
+                                </td>
+                                <td style="text-align:center;"><b>SALDO $:</b> 
+                                    <span class="filled-text">
+                                        <t t-esc="o.amount_order_due"/>
+                                    </span>
+                                </td>
+                                <td style="text-align:center;"><b>CLAVES:</b> 
+                                    <span class="filled-text">
+                                        <t t-if="o.key_code">
+                                            <t t-esc="o.key_code"/>
+                                        </t>
+                                        <t t-else="">
+                                            _____
+                                        </t>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ================= PRODUCTOS / SERVICIOS ================= -->
+                        <div class="section-title big" style="margin-top:20px;">
+                            PRODUCTOS Y SERVICIOS
+                        </div>
+
+                        <table style="width:100%; border-collapse:collapse; font-size:14pt; margin-top:10px;">
+                            <thead>
+                                <tr style="background:#0b2474; color:white;">
+                                    <th style="border:1px solid #000; padding:6px;">Producto</th>
+                                    <th style="border:1px solid #000; padding:6px;">Descripción</th>
+                                    <th style="border:1px solid #000; padding:6px; text-align:center;">Cant.</th>
+                                    <th style="border:1px solid #000; padding:6px; text-align:right;">P. Unit</th>
+                                    <th style="border:1px solid #000; padding:6px; text-align:right;">Subtotal</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <t t-if="o.line_ids">
+                                    <t t-foreach="o.line_ids" t-as="line">
+                                        <tr>
+                                            <td style="border:1px solid #000; padding:6px;">
+                                                <t t-esc="line.product_id.display_name"/>
+                                            </td>
+                                            <td style="border:1px solid #000; padding:6px;">
+                                                <t t-esc="line.product_id.name"/>
+                                            </td>
+                                            <td style="border:1px solid #000; padding:6px; text-align:center;">
+                                                <t t-esc="line.quantity"/>
+                                            </td>
+                                            <td style="border:1px solid #000; padding:6px; text-align:right;">
+                                                <t t-esc="line.price_unit"/>
+                                            </td>
+                                            <td style="border:1px solid #000; padding:6px; text-align:right;">
+                                                <t t-esc="line.total"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+
+                                <t t-else="">
+                                    <tr>
+                                        <td colspan="5" style="border:1px solid #000; padding:10px; text-align:center;">
+                                            No existen productos registrados
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <!-- ================= AUTORIZACIÓN Y FIRMAS ================= -->
+                        <div style="margin-top:18px;">
+
+                            <!-- TEXTO AUTORIZACIÓN -->
+                            <!-- <div style="
+                                background:#0b2474;
+                                color:#fff;
+                                padding:1px 3px;
+                                font-weight:bold;
+                                text-align:center;
+                                border-radius:4px;
+                                font-size:12pt;
+                            ">
+                                Autorizo a Car-Electronic la realización de los trabajos descritos y me sujeto
+                                expresamente sin reserva a mi favor a las condiciones aquí descritas
+                            </div> -->
+
+                            <!-- FIRMAS -->
+                            <br/><br/><br/><br/><br/><br/>
+                            <table style="width:100%; margin-top:30px; text-align:center; font-size:18pt;">
+                                <tr>
+                                    <!-- FIRMA CLIENTE -->
+                                    <td style="width:50%;">
+                                        <t t-if="o.env.company.report_signature">
+                                            <br/><br/><br/>
+                                        </t>
+                                        <div style="border-top:1px solid #000; width:80%; margin:0 auto;"></div>
+                                        <div style="margin-top:4px; font-weight:bold;">
+                                            FIRMA CLIENTE
+                                        </div>
+                                    </td>
+
+                                    <!-- FIRMA EMPRESA -->
+                                    <td style="width:50%; text-align:center; vertical-align:bottom;">
+
+                                        <!-- Imagen firma empresa -->
+                                        <t t-if="o.env.company.report_signature">
+                                            <img t-attf-src="data:image/*;base64,{{ o.env.company.report_signature }}"
+                                                style="height:100px; margin-bottom:5px;"/>
+                                        </t>
+
+                                        <!-- Línea -->
+                                        <div style="border-top:1px solid #000; width:80%; margin:0 auto;"></div>
+
+                                        <!-- Nombre empresa -->
+                                        <div style="margin-top:4px; font-weight:bold;">
+                                            <t t-esc="o.env.company.name"/>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_quotation" model="report.paperformat">
+        <field name="name">A4 Workorder</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">2</field>
+        <field name="margin_bottom">2</field>
+        <field name="margin_left">2</field>
+        <field name="margin_right">2</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">2</field>
+        <field name="dpi">130</field>
+    </record>
+
+    <record id="action_report_quotation" model="ir.actions.report">
+        <field name="name">Proforma</field>
+        <field name="model">mechanic.workorder</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ebal_mechanic.report_quotation_document</field>
+        <field name="report_file">ebal_mechanic.report_quotation_document</field>
+        <field name="paperformat_id" ref="ebal_mechanic.paperformat_quotation"/>
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="action_report_quotation" model="ir.actions.report">
+        <field name="paperformat_id" ref="ebal_mechanic.paperformat_quotation"/>
+    </record>
+</odoo>
