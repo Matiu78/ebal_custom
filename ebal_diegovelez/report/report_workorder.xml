@@ -5,7 +5,7 @@
                 <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id">
                     <style type="text/css">
                         .section-title {
-                            background-color: rgba(11, 36, 116, 0.65);
+                            background-color: rgb(212, 140, 20);
                             color: #ffffff;
                             font-weight: bold;
                             padding: 6px 10px;
@@ -449,14 +449,14 @@
         <field name="name">Orden de Trabajo</field>
         <field name="model">mechanic.workorder</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">ebal_mechanic.report_workorder_document</field>
-        <field name="report_file">ebal_mechanic.report_workorder_document</field>
-        <field name="paperformat_id" ref="ebal_mechanic.paperformat_workorder"/>
+        <field name="report_name">ebal_diegovelez.report_workorder_document</field>
+        <field name="report_file">ebal_diegovelez.report_workorder_document</field>
+        <field name="paperformat_id" ref="ebal_diegovelez.paperformat_workorder"/>
         <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
     </record>
 
     <record id="action_report_workorder" model="ir.actions.report">
-        <field name="paperformat_id" ref="ebal_mechanic.paperformat_workorder"/>
+        <field name="paperformat_id" ref="ebal_diegovelez.paperformat_workorder"/>
     </record>
 
     <template id="report_quotation_document">
@@ -465,7 +465,7 @@
                 <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id">
                     <style type="text/css">
                         .section-title {
-                            background-color: rgba(11, 36, 116, 0.65);
+                            background-color: rgb(212, 140, 20);
                             color: #ffffff;
                             font-weight: bold;
                             padding: 6px 10px;
@@ -741,13 +741,13 @@
         <field name="name">Proforma</field>
         <field name="model">mechanic.workorder</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">ebal_mechanic.report_quotation_document</field>
-        <field name="report_file">ebal_mechanic.report_quotation_document</field>
-        <field name="paperformat_id" ref="ebal_mechanic.paperformat_quotation"/>
+        <field name="report_name">ebal_diegovelez.report_quotation_document</field>
+        <field name="report_file">ebal_diegovelez.report_quotation_document</field>
+        <field name="paperformat_id" ref="ebal_diegovelez.paperformat_quotation"/>
         <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
     </record>
 
     <record id="action_report_quotation" model="ir.actions.report">
-        <field name="paperformat_id" ref="ebal_mechanic.paperformat_quotation"/>
+        <field name="paperformat_id" ref="ebal_diegovelez.paperformat_quotation"/>
     </record>
 </odoo>
