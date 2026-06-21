@@ -1,9 +1,9 @@
 {
-    "name": "Diego Velez",
+    "name": "Carelectronic",
     "version": "18.0.1.0.0",
-    "summary": "Diego Velez",
+    "summary": "Carelectronic",
     "author": "EbalSoft",
-    "category": "Diego Velez",
+    "category": "Carelectronic",
     "depends": [
         "ebal_mechanic"
     ],

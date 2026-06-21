@@ -1,0 +1,46 @@
+<odoo>
+
+    <record id="view_mechanic_workorder_form_diegovelez_inherit" model="ir.ui.view">
+        <field name="name">mechanic.workorder.form.diegovelez.inherit</field>
+        <field name="model">mechanic.workorder</field>
+        <field name="inherit_id" ref="ebal_mechanic.view_mechanic_workorder_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+
+            <!-- ELIMINAR BOTÓN PROFORMA -->
+            <xpath expr="//button[@name='action_print_workorder']" position="replace"/>
+
+            <!-- ELIMINAR BOTÓN PROFORMA -->
+            <xpath expr="//button[@name='action_print_quotation']" position="replace"/>
+
+            <!-- ELIMINAR OBSERVACIONES -->
+            <xpath expr="//button[@name='action_open_whatsapp_files_wizard']" position="replace"/>
+
+            <!-- ELIMINAR BOTÓN PROFORMA WHATSAPP (si existe) -->
+            <xpath expr="//button[@name='action_send_quotation_whatsapp']" position="replace"/>
+
+            <!-- REEMPLAZAR IMPRIMIR PREFactura (QUITAR invisible=1 DE BASE) -->
+            <xpath expr="//button[@name='action_print_preinvoice']" position="replace">
+
+                <button name="action_print_preinvoice"
+                        string="Imprimir Prefactura"
+                        type="object"
+                        class="btn-secondary"/>
+
+            </xpath>
+
+            <!-- REEMPLAZAR PREFactura (QUITAR invisible=1 DE BASE) -->
+            <xpath expr="//button[@name='action_send_preinvoice_whatsapp']" position="replace">
+
+                <button string="Prefactura"
+                        type="object"
+                        name="action_send_preinvoice_whatsapp"
+                        class="btn-success"
+                        icon="fa-whatsapp"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
