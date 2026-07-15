@@ -1,7 +1,7 @@
 {
     "name": "Diego Velez",
     "version": "18.0.1.0.0",
-    "summary": "Diego Velez",
+    "summary": "MecánicaDiego Velez",
     "author": "EbalSoft",
     "category": "Diego Velez",
     "depends": [
