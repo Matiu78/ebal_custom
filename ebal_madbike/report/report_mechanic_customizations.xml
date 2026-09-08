@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- +25% de margen superior en la orden de trabajo y la proforma
+         (margin_top 2 -> 2.5 mm, header_spacing 2 -> 2.5 mm). -->
+    <record id="ebal_mechanic.paperformat_workorder" model="report.paperformat">
+        <field name="margin_top">2.5</field>
+        <field name="header_spacing">2.5</field>
+    </record>
+    <record id="ebal_mechanic.paperformat_quotation" model="report.paperformat">
+        <field name="margin_top">2.5</field>
+        <field name="header_spacing">2.5</field>
+    </record>
+
+    <!-- ================= ORDEN DE TRABAJO ================= -->
+    <template id="report_workorder_document_madbike"
+              inherit_id="ebal_mechanic.report_workorder_document"
+              priority="99">
+
+        <!-- Más espacio para firmar (arriba de la tabla de firmas) -->
+        <xpath expr="//table[contains(@style, 'margin-top:30px')]" position="before">
+            <div style="height:70px;"/>
+        </xpath>
+
+        <!-- Pie de página, después de las firmas -->
+        <xpath expr="//table[contains(@style, 'margin-top:30px')]" position="after">
+            <div style="margin-top:28px; text-align:center; font-size:12pt; font-weight:bold; color:#0b2474; line-height:1.5;">
+                <div>El trabajo se realizará con el 50% del anticipo</div>
+                <div>Cta Jep: 406189332900</div>
+            </div>
+        </xpath>
+
+        <!-- Un poco más de separación entre el bloque de autorización y las firmas -->
+        <xpath expr="//table[contains(@style, 'margin-top:30px')]" position="attributes">
+            <attribute name="style">width:100%; margin-top:60px; text-align:center; font-size:18pt;</attribute>
+        </xpath>
+    </template>
+
+    <!-- ================= PROFORMA (plantilla no-RIDE, por si está activa) = -->
+    <template id="report_quotation_document_madbike"
+              inherit_id="ebal_mechanic.report_quotation_document"
+              priority="99">
+
+        <xpath expr="//table[contains(@style, 'margin-top:30px')]" position="before">
+            <div style="height:70px;"/>
+        </xpath>
+        <xpath expr="//table[contains(@style, 'margin-top:30px')]" position="after">
+            <div style="margin-top:28px; text-align:center; font-size:12pt; font-weight:bold; color:#0b2474; line-height:1.5;">
+                <div>El trabajo se realizará con el 50% del anticipo</div>
+                <div>Cta Jep: 406189332900</div>
+            </div>
+        </xpath>
+        <xpath expr="//table[contains(@style, 'margin-top:30px')]" position="attributes">
+            <attribute name="style">width:100%; margin-top:60px; text-align:center; font-size:18pt;</attribute>
+        </xpath>
+    </template>
+
+    <!-- ================= PROFORMA (RIDE) ================= -->
+    <template id="report_quotation_document_ec_ride_madbike"
+              inherit_id="ebal_mechanic.report_quotation_document_ec_ride"
+              priority="99">
+
+        <!-- Más espacio para firmar (arriba del bloque de firmas) -->
+        <xpath expr="//div[hasclass('row') and hasclass('mt-4')]" position="before">
+            <div style="height:55px;"/>
+        </xpath>
+
+        <!-- Pie de página, después de las firmas -->
+        <xpath expr="//div[hasclass('row') and hasclass('mt-4')]" position="after">
+            <div class="mt-3 text-center" style="font-size:10px; font-weight:bold; line-height:1.6;">
+                <div>El trabajo se realizará con el 50% del anticipo</div>
+                <div>Cta Jep: 406189332900</div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
