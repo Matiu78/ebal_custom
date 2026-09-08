@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- +25% de margen superior en la orden de trabajo y la proforma
-         (margin_top 2 -> 2.5 mm, header_spacing 2 -> 2.5 mm). -->
+    <!-- Más margen superior en la orden de trabajo y la proforma.
+         report.paperformat.margin_top / header_spacing son enteros (mm):
+         2 -> 3 mm (el valor entero más cercano a +25%). -->
     <record id="ebal_mechanic.paperformat_workorder" model="report.paperformat">
-        <field name="margin_top">2.5</field>
-        <field name="header_spacing">2.5</field>
+        <field name="margin_top">3</field>
+        <field name="header_spacing">3</field>
     </record>
     <record id="ebal_mechanic.paperformat_quotation" model="report.paperformat">
-        <field name="margin_top">2.5</field>
-        <field name="header_spacing">2.5</field>
+        <field name="margin_top">3</field>
+        <field name="header_spacing">3</field>
     </record>
 
     <!-- ================= ORDEN DE TRABAJO ================= -->
