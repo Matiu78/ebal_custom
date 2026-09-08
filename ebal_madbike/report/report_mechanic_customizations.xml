@@ -83,10 +83,11 @@
             <div style="height:61px;"/>
         </xpath>
 
-        <!-- Pie de página, después de las firmas. Letra de la cuenta +50%. -->
+        <!-- Pie de página, después de las firmas. Letra de la cuenta +50%.
+             La condición del anticipo solo aplica a la Proforma, no a la Prefactura. -->
         <xpath expr="//t[@t-call='ebal_base.report_ride_signatures']" position="after">
             <div class="mt-3 text-center" style="font-size:15px; font-weight:bold; line-height:1.6;">
-                <div>El trabajo se realizará con el 50% del anticipo</div>
+                <div t-if="doc_title != 'PREFACTURA'">El trabajo se realizará con el 50% del anticipo</div>
                 <div>Cta Jep: 406189332900</div>
             </div>
         </xpath>
