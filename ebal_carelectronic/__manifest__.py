@@ -2,7 +2,8 @@
     "name": "Carelectronic",
     "version": "18.0.1.0.0",
     "summary": "Carelectronic",
-    "author": "EbalSoft",
+    "author": "EBAL SOFTWARE",
+    "license": "LGPL-3",
     "category": "Carelectronic",
     "depends": [
         "ebal_mechanic"

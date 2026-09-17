@@ -12,7 +12,7 @@ Crea productos Odoo de internet y TV, y los combos en **Productos MicroWisp**:
 * Comprobado (ej. 112D-PB01)
 * Por línea: empresa, diario, producto Odoo, nombre en factura y monto
 """,
-    "author": "EbalSoft",
+    "author": "EBAL SOFTWARE",
     "website": "https://www.ebalsoft.com",
     "category": "Globox",
     "license": "LGPL-3",
