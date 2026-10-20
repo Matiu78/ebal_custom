@@ -1,0 +1,35 @@
+<odoo>
+
+    <record id="view_mechanic_workorder_form_carelectronic_inherit" model="ir.ui.view">
+        <field name="name">mechanic.workorder.form.carelectronic.inherit</field>
+        <field name="model">mechanic.workorder</field>
+        <field name="inherit_id" ref="ebal_mechanic.view_mechanic_workorder_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+
+            <!-- La OT agrupa los botones en menús (header_action_group): solo
+                 se deja la prefactura (impresión y WhatsApp) y "Finalizado". -->
+            <xpath expr="//widget[@name='header_action_group'][@icon='fa-print']" position="replace">
+                <button name="action_print_preinvoice"
+                        string="Imprimir Prefactura"
+                        type="object"
+                        class="btn-secondary"/>
+            </xpath>
+            <xpath expr="//widget[@name='header_action_group'][@icon='fa-whatsapp']" position="replace">
+                <widget name="header_action_group"
+                        string="WhatsApp"
+                        icon="fa-whatsapp"
+                        btn_class="btn-success"
+                        title="Enviar por WhatsApp"
+                        options="{
+                            'actions': [
+                                {'name': 'action_send_preinvoice_whatsapp', 'string': 'Prefactura', 'icon': 'fa-file-o'},
+                                {'name': 'action_send_finished_whatsapp', 'string': 'Finalizado', 'icon': 'fa-check'},
+                            ]
+                        }"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
