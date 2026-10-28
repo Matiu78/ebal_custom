@@ -83,7 +83,7 @@ def row(title, sub, link, domain, dark=False):
 def band(key):
     """Franja de color de la marca con sus productos adentro (portada)."""
     b = BRANDS[key]
-    return '''<t t-set="items" t-value="request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',%(id)d)], order='id desc', limit=6)"/>
+    return '''<t t-set="items" t-value="request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',%(sub)d)], order='id', limit=6) or request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',%(id)d)], order='id desc', limit=6)"/>
 <t t-set="prices" t-value="items._get_sales_prices(website)"/>
 <section class="mb-brandband mb-b-%(key)s" data-name="%(name)s">
     <div class="mb-wrap">
@@ -97,7 +97,7 @@ def band(key):
             </t>
         </div>
     </div>
-</section>''' % {"id": b["cat"].id, "key": key, "name": b["name"], "title": b["title"], "blurb": b["blurb"],
+</section>''' % {"id": b["cat"].id, "sub": b["subcats"][0].id, "key": key, "name": b["name"], "title": b["title"], "blurb": b["blurb"],
                  "btn": b["color_btn"], "card": card()}
 
 BAND_INGCO = band("ingco")
