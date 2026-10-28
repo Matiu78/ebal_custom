@@ -83,17 +83,9 @@
     </div>
 </section>
 
-<section class="mb-ingco" data-name="INGCO">
-    <div class="mb-wrap">
-        <div>
-            <h2 class="mb-h">Herramientas INGCO</h2>
-            <p>Herramientas eléctricas, manuales y accesorios INGCO para el taller, la obra y el hogar. Resistentes, con repuestos y respaldo.</p>
-        </div>
-        <a href="/ingco" class="mb-btn">Ver productos INGCO</a>
-    </div>
-</section>
+{{BAND_INGCO}}
 
-{{INGCO_ROW}}
+{{BAND_WADFOW}}
 
 {{SHOP_ROW}}
 

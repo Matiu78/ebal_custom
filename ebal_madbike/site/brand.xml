@@ -1,20 +1,20 @@
-<t name="INGCO" t-name="ebal_madbike.ingco_page">
+<t name="{{B_NAME}}" t-name="ebal_madbike.{{B_KEY}}_page">
     <t t-call="website.layout">
-        <t t-set="pageName" t-value="'ingco'"/>
-        <div id="wrap" class="oe_structure oe_empty mb mb-ingco-page">
-<section class="mb-ingco-hero" data-name="INGCO">
+        <t t-set="pageName" t-value="'{{B_KEY}}'"/>
+        <div id="wrap" class="oe_structure oe_empty mb mb-brand-page mb-b-{{B_KEY}}">
+<section class="mb-brand-hero" data-name="{{B_NAME}}">
     <div class="mb-wrap">
-        <h1 class="mb-h">Herramientas INGCO</h1>
-        <p>Herramientas eléctricas, manuales, de jardinería y accesorios INGCO: para profesionales de taller y construcción y para quien trabaja en casa. Mira lo que tenemos disponible y escríbenos si buscas un modelo específico.</p>
+        <h1 class="mb-h">{{B_TITLE}}</h1>
+        <p>{{B_INTRO}}</p>
     </div>
 </section>
-<section class="mb-sec" data-name="Productos INGCO">
+<section class="mb-sec" data-name="Productos {{B_NAME}}">
     <div class="mb-wrap">
-        <div class="mb-ingco-subs">
-            <a href="/shop/category/{{INGCO_SLUG}}">Todo INGCO</a>
-{{INGCO_SUBS}}
+        <div class="mb-brand-subs">
+            <a href="/shop/category/{{B_SLUG}}">Todo {{B_NAME}}</a>
+{{B_SUBS}}
         </div>
-        <t t-set="items" t-value="request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',{{INGCO_ID}})], order='website_sequence, id desc', limit=60)"/>
+        <t t-set="items" t-value="request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',{{B_ID}})], order='website_sequence, id desc', limit=60)"/>
         <t t-set="prices" t-value="items._get_sales_prices(website)"/>
         <div class="mb-cards" t-if="items">
             <t t-foreach="items" t-as="p">
@@ -32,7 +32,7 @@
                 </a>
             </t>
         </div>
-        <div class="mb-empty" t-else="">Estamos cargando el catálogo INGCO. Escríbenos por <a href="{{WA}}" target="_blank">WhatsApp</a> y te decimos qué hay disponible.</div>
+        <div class="mb-empty" t-else="">Estamos cargando el catálogo {{B_NAME}}. Escríbenos por <a href="{{WA}}" target="_blank">WhatsApp</a> y te decimos qué hay disponible.</div>
     </div>
 </section>
         </div>

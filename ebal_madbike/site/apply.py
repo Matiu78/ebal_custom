@@ -32,9 +32,21 @@ def public_cat(name, parent=None, seq=10):
     if not rec:
         rec = PC.create({"name": name, "parent_id": parent.id if parent else False, "sequence": seq})
     return rec
-ingco = public_cat("INGCO", None, 5)
-subs = [public_cat(n, ingco, i * 10) for i, n in enumerate(
-    ["Herramientas eléctricas", "Herramientas manuales", "Jardinería", "Accesorios y consumibles"], start=1)]
+BRANDS = {
+    "ingco": {"name": "INGCO", "seq": 5, "color_btn": "Ver productos INGCO",
+              "title": "Herramientas INGCO",
+              "blurb": "Herramientas eléctricas, manuales y accesorios INGCO para el taller, la obra y el hogar. Resistentes, con repuestos y respaldo.",
+              "intro": "Herramientas eléctricas, manuales, de jardinería y accesorios INGCO: para profesionales de taller y construcción y para quien trabaja en casa. Mira lo que tenemos disponible y escríbenos si buscas un modelo específico.",
+              "subs": ["Herramientas eléctricas", "Herramientas manuales", "Jardinería", "Accesorios y consumibles"]},
+    "wadfow": {"name": "WADFOW", "seq": 6, "color_btn": "Ver productos WADFOW",
+               "title": "Herramientas WADFOW",
+               "blurb": "Herramientas inalámbricas, eléctricas, neumáticas y manuales WADFOW: potencia y buen precio para el taller y el hogar.",
+               "intro": "Herramientas WADFOW: inalámbricas, eléctricas, neumáticas, manuales y de jardinería, con la línea de baterías de 20 V. Mira lo que tenemos disponible y escríbenos si buscas un modelo específico.",
+               "subs": ["Herramientas inalámbricas", "Herramientas eléctricas", "Herramientas neumáticas", "Herramientas manuales", "A combustión", "Jardinería"]},
+}
+for key, b in BRANDS.items():
+    b["cat"] = public_cat(b["name"], None, b["seq"])
+    b["subcats"] = [public_cat(n, b["cat"], i * 10) for i, n in enumerate(b["subs"], start=1)]
 slug = lambda rec: env["ir.http"]._slug(rec)
 
 # ---------------------------------------------------------------- tarjetas de producto (portada y /ingco)
@@ -68,16 +80,40 @@ def row(title, sub, link, domain, dark=False):
 </section>''' % {"cls": "mb-sec-grey" if dark else "", "title": title, "sub": sub, "link": link,
                  "domain": domain, "card": card()}
 
-INGCO_ROW = row("Novedades INGCO", "Lo último en herramientas", "/ingco",
-                "[('is_published','=',True),('public_categ_ids','child_of',%d)]" % ingco.id, dark=True)
+def band(key):
+    """Franja de color de la marca con sus productos adentro (portada)."""
+    b = BRANDS[key]
+    return '''<t t-set="items" t-value="request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',%(id)d)], order='id desc', limit=6)"/>
+<t t-set="prices" t-value="items._get_sales_prices(website)"/>
+<section class="mb-brandband mb-b-%(key)s" data-name="%(name)s">
+    <div class="mb-wrap">
+        <div class="mb-brandband-head">
+            <div><h2 class="mb-h">%(title)s</h2><p>%(blurb)s</p></div>
+            <a href="/%(key)s" class="mb-btn">%(btn)s</a>
+        </div>
+        <div class="mb-cards" t-if="items">
+            <t t-foreach="items" t-as="p">
+                %(card)s
+            </t>
+        </div>
+    </div>
+</section>''' % {"id": b["cat"].id, "key": key, "name": b["name"], "title": b["title"], "blurb": b["blurb"],
+                 "btn": b["color_btn"], "card": card()}
+
+BAND_INGCO = band("ingco")
+BAND_WADFOW = band("wadfow")
 SHOP_ROW = row("De la tienda", "Repuestos, lubricantes y más", "/shop",
                "[('is_published','=',True)]")
 
-def fill(text):
-    subs_html = "\n".join('            <a href="/shop/category/%s">%s</a>' % (slug(s), s.name) for s in subs)
-    for a, b in (("{{INGCO_ROW}}", INGCO_ROW), ("{{SHOP_ROW}}", SHOP_ROW), ("{{INGCO_SUBS}}", subs_html),
-                 ("{{INGCO_ID}}", str(ingco.id)), ("{{INGCO_SLUG}}", slug(ingco)), ("{{WA}}", WA)):
-        text = text.replace(a, b)
+def fill(text, brand=None):
+    if brand:
+        b = BRANDS[brand]
+        subs_html = "\n".join('            <a href="/shop/category/%s">%s</a>' % (slug(s), s.name) for s in b["subcats"])
+        for x, y in (("{{B_NAME}}", b["name"]), ("{{B_KEY}}", brand), ("{{B_TITLE}}", b["title"]), ("{{B_INTRO}}", b["intro"]),
+                     ("{{B_ID}}", str(b["cat"].id)), ("{{B_SLUG}}", slug(b["cat"])), ("{{B_SUBS}}", subs_html)):
+            text = text.replace(x, y)
+    for x, y in (("{{BAND_INGCO}}", BAND_INGCO), ("{{BAND_WADFOW}}", BAND_WADFOW), ("{{SHOP_ROW}}", SHOP_ROW), ("{{WA}}", WA)):
+        text = text.replace(x, y)
     # las imágenes van DESPUÉS: las filas también las usan
     return re.sub(r"\{\{img:([^}]+)\}\}", lambda m: urls[m.group(1)], text)
 
@@ -97,23 +133,25 @@ page.write({
     "website_meta_keywords": "suspensión, calibración de chasis, rally, mecánica, Cuenca, INGCO, repuestos",
 })
 
-# página /ingco
-iv = V.search([("key", "=", "ebal_madbike.ingco_page"), ("website_id", "=", website.id)], limit=1)
-arch = fill(open(D + "ingco.xml").read())
-if iv:
-    write_arch(iv, arch)
-else:
-    iv = V.create({"name": "INGCO", "key": "ebal_madbike.ingco_page", "type": "qweb", "arch_db": arch,
-                   "website_id": website.id, "active": True})
-    write_arch(iv, arch)
-ipage = env["website.page"].search([("url", "=", "/ingco"), ("website_id", "=", website.id)], limit=1)
-if not ipage:
-    ipage = env["website.page"].create({"url": "/ingco", "view_id": iv.id, "website_id": website.id,
-                                        "is_published": True, "website_indexed": True})
-ipage.write({
-    "website_meta_title": "Herramientas INGCO | MDBK Racing Suspensions",
-    "website_meta_description": "Herramientas eléctricas, manuales, de jardinería y accesorios INGCO en Cuenca.",
-})
+# páginas de marca: /ingco y /wadfow
+for key, b in BRANDS.items():
+    vkey = "ebal_madbike.%s_page" % key
+    iv = V.search([("key", "=", vkey), ("website_id", "=", website.id)], limit=1)
+    arch = fill(open(D + "brand.xml").read(), key)
+    if iv:
+        write_arch(iv, arch)
+    else:
+        iv = V.create({"name": b["name"], "key": vkey, "type": "qweb", "arch_db": arch,
+                       "website_id": website.id, "active": True})
+        write_arch(iv, arch)
+    ipage = env["website.page"].search([("url", "=", "/" + key), ("website_id", "=", website.id)], limit=1)
+    if not ipage:
+        ipage = env["website.page"].create({"url": "/" + key, "view_id": iv.id, "website_id": website.id,
+                                            "is_published": True, "website_indexed": True})
+    ipage.write({
+        "website_meta_title": "%s | MDBK Racing Suspensions" % b["title"],
+        "website_meta_description": b["blurb"],
+    })
 
 # pie de página (copia propia del sitio)
 footer = VW.search([("key", "=", "website.footer_custom"), ("website_id", "in", (False, website.id))], order="website_id", limit=1)
@@ -129,7 +167,7 @@ for key in ("website_sale.products_add_to_cart", "website_sale.products_categori
 # menú
 Menu = env["website.menu"]
 root = website.menu_id
-want = [("Inicio", "/"), ("Servicios", "/#servicios"), ("Tienda", "/shop"), ("INGCO", "/ingco"),
+want = [("Inicio", "/"), ("Servicios", "/#servicios"), ("Tienda", "/shop"), ("INGCO", "/ingco"), ("WADFOW", "/wadfow"),
         ("Consultar orden", "/consultar-orden"), ("Reservas", "/appointment"), ("Contáctenos", "/contactus")]
 kids = Menu.search([("website_id", "=", website.id), ("parent_id", "=", root.id)])
 by_url = {m.url: m for m in kids}
