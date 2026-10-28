@@ -1,0 +1,148 @@
+<t name="Homepage" t-name="website.homepage">
+    <t t-call="website.layout">
+        <t t-set="pageName" t-value="'homepage'"/>
+        <div id="wrap" class="oe_structure oe_empty cx">
+
+<section class="cx-hero" data-name="Portada" style="--cx-hero:url('{{img:663.webp}}');min-height:calc(100vh - 80px)">
+    <div class="cx-wrap cx-grid">
+        <div>
+            <span class="cx-eyebrow">Servicio automotriz computarizado · Cuenca</span>
+            <h1 class="cx-h">Tu vehículo en <em>manos expertas</em></h1>
+            <p class="lead">Taller mecánico con amplia experiencia en Cuenca, dirigido por el Ing. Diego Vélez Solís. Diagnóstico computarizado, motor, caja y embrague, con presupuesto claro antes de empezar.</p>
+            <div class="cx-ctas">
+                <a href="tel:+59372820267" class="cx-btn cx-btn-red"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Llamar ahora</a>
+                <!--WA--><a href="https://wa.me/{{WA}}?text=Hola%2C%20quisiera%20una%20revisi%C3%B3n%20para%20mi%20veh%C3%ADculo" target="_blank" class="cx-btn cx-btn-wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg>WhatsApp</a><!--/WA-->
+                <a href="#ubicacion" class="cx-btn cx-btn-ghost">Cómo llegar</a>
+            </div>
+            <div class="cx-chips"><span>Diagnóstico</span><span>Motor</span><span>Caja y embrague</span><span>Distribución</span><span>Mantenimiento</span></div>
+        </div>
+        <div>
+            <img class="cx-logo" src="{{img:logo_dv_alpha.png}}" alt="Talleres Diego Vélez, servicio automotriz computarizado" loading="eager"/>
+        </div>
+    </div>
+</section>
+
+<section class="cx-sec" id="servicios" data-name="Servicios">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Lo que hacemos</span>
+            <h2 class="cx-h">Servicios del taller</h2>
+            <p>Reparación y mantenimiento con equipo de diagnóstico y repuestos de calidad, explicados paso a paso.</p>
+        </div>
+        <div class="cx-services">
+            <div class="cx-svc"><span class="cx-num">01</span><div class="cx-ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div><h3 class="cx-h">Diagnóstico computarizado</h3><p>Lectura de fallas con escáner y pruebas de sensores. Encontramos el problema real antes de cambiar piezas.</p></div>
+            <div class="cx-svc"><span class="cx-num">02</span><div class="cx-ico"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="2"/><path d="M7 8V5h4v3M16 8V6h2M3 13H1M21 13h2M8 18v2M16 18v2"/></svg></div><h3 class="cx-h">Motor</h3><p>Rectificación, juegos de pistones, empaques, bomba de aceite y todo lo necesario para recuperar la potencia de tu motor.</p></div>
+            <div class="cx-svc"><span class="cx-num">03</span><div class="cx-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v5.5M12 14.5V20M4 12h5.5M14.5 12H20"/></svg></div><h3 class="cx-h">Caja y embrague</h3><p>Cambio y reparación de embrague (disco, plato y collarín), reparación de cajas, retenes y empaques.</p></div>
+            <div class="cx-svc"><span class="cx-num">04</span><div class="cx-ico"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/><path d="M7 8h10M7 16h10"/></svg></div><h3 class="cx-h">Distribución</h3><p>Banda de distribución, tensores, rodillos y reten de cigüeñal y árbol de levas, para evitar daños mayores.</p></div>
+            <div class="cx-svc"><span class="cx-num">05</span><div class="cx-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M5 17l5-3M19 17l-5-3"/></svg></div><h3 class="cx-h">Frenos y dirección</h3><p>Mordazas, bujes y revisión del sistema de dirección, con líquidos y aceites originales.</p></div>
+            <div class="cx-svc"><span class="cx-num">06</span><div class="cx-ico"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/></svg></div><h3 class="cx-h">Mantenimiento</h3><p>Cambio de aceite y filtros y revisión general para que tu vehículo llegue seguro a donde vas.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cx-sec cx-sec-alt" data-name="Por qué elegirnos">
+    <div class="cx-wrap cx-why">
+        <div>
+            <span class="cx-eyebrow">Por qué elegirnos</span>
+            <div class="cx-head" style="margin:14px 0 0"><h2 class="cx-h">Un taller que te mantiene informado</h2></div>
+            <ul>
+                <li><span class="cx-tick"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Presupuesto antes de reparar</b><span>Te enviamos la proforma con el detalle del trabajo y los repuestos para que la apruebes.</span></div></li>
+                <li><span class="cx-tick"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Consulta tu orden en línea</b><span>Con la placa de tu vehículo ves el estado y el detalle de tu orden de trabajo, sin llamar.</span></div></li>
+                <li><span class="cx-tick"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Repuestos a la vista</b><span>Te mostramos las piezas cambiadas y te explicamos por qué hacía falta cambiarlas.</span></div></li>
+                <li><span class="cx-tick"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Trato directo</b><span>Hablas directamente con quien revisa tu vehículo, en palabras simples.</span></div></li>
+            </ul>
+        </div>
+        <div class="cx-photo"><img src="{{img:550.webp}}" alt="Camioneta Mazda en revisión en el taller" loading="lazy"/></div>
+    </div>
+</section>
+
+<section class="cx-sec" id="galeria" data-name="Galería">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Trabajos reales</span>
+            <h2 class="cx-h">Vehículos en el taller</h2>
+            <p>Autos y camionetas de distintas marcas pasan por nuestras manos. Estas son fotos de nuestro trabajo diario.</p>
+        </div>
+        <div class="cx-gallery">
+            <figure><img src="{{img:953.webp}}" alt="Chevrolet en el taller" loading="lazy"/><figcaption>Chevrolet</figcaption></figure>
+            <figure><img src="{{img:550.webp}}" alt="Mazda en el taller" loading="lazy"/><figcaption>Mazda</figcaption></figure>
+            <figure><img src="{{img:656.webp}}" alt="Mitsubishi L200 en el taller" loading="lazy"/><figcaption>Mitsubishi L200</figcaption></figure>
+            <figure><img src="{{img:929.webp}}" alt="Kia Cerato en el taller" loading="lazy"/><figcaption>Kia Cerato</figcaption></figure>
+            <figure><img src="{{img:925.webp}}" alt="Suzuki Swift en el taller" loading="lazy"/><figcaption>Suzuki Swift</figcaption></figure>
+            <figure><img src="{{img:947.webp}}" alt="Hyundai Tucson" loading="lazy"/><figcaption>Hyundai Tucson</figcaption></figure>
+            <figure><img src="{{img:510.webp}}" alt="Chevrolet Aveo en el taller" loading="lazy"/><figcaption>Chevrolet Aveo</figcaption></figure>
+            <figure><img src="{{img:612.webp}}" alt="Hyundai en el taller" loading="lazy"/><figcaption>Hyundai</figcaption></figure>
+            <figure><img src="{{img:648.webp}}" alt="Chevrolet Aveo negro" loading="lazy"/><figcaption>Chevrolet Aveo</figcaption></figure>
+        </div>
+        <p class="cx-note">Por privacidad de nuestros clientes, las placas de los vehículos aparecen difuminadas.</p>
+    </div>
+</section>
+
+<section class="cx-sec cx-sec-alt" data-name="Embrague">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Embrague</span>
+            <h2 class="cx-h">Cambio de embrague, pieza por pieza</h2>
+            <p>Disco, plato de presión y collarín: te mostramos lo que se retira y lo que se instala.</p>
+        </div>
+        <div class="cx-parts">
+            <figure><img src="{{img:662.webp}}" alt="Plato de presión del embrague" loading="lazy"/><figcaption>Plato de presión</figcaption></figure>
+            <figure><img src="{{img:663.webp}}" alt="Disco de embrague" loading="lazy"/><figcaption>Disco de embrague</figcaption></figure>
+            <figure><img src="{{img:666.webp}}" alt="Kit de embrague completo" loading="lazy"/><figcaption>Kit completo</figcaption></figure>
+            <figure><img src="{{img:667.webp}}" alt="Kit de embrague con collarín" loading="lazy"/><figcaption>Disco, plato y collarín</figcaption></figure>
+        </div>
+    </div>
+</section>
+
+<section class="cx-sec" data-name="Marcas">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Marcas que atendemos</span>
+            <h2 class="cx-h">Experiencia con tu marca</h2>
+            <p>Atendemos las marcas más comunes del país. Si no ves la tuya, consúltanos.</p>
+        </div>
+        <div class="cx-brands"><span>Chevrolet</span><span>Hyundai</span><span>Kia</span><span>Mazda</span><span>Mitsubishi</span><span>Suzuki</span><span>Toyota</span><span>Jeep</span><span>Bajaj</span></div>
+    </div>
+</section>
+
+<section class="cx-sec" data-name="Consulta de orden" style="padding-top:20px;padding-bottom:40px">
+    <div class="cx-wrap">
+        <div class="cx-track">
+            <div>
+                <h2 class="cx-h">¿Dejaste tu vehículo en el taller?</h2>
+                <p>Consulta el estado y el detalle de tu orden de trabajo en línea, solo con la placa de tu vehículo.</p>
+            </div>
+            <a href="/consultar-orden" class="cx-btn">Consultar mi orden</a>
+        </div>
+    </div>
+</section>
+
+<section class="cx-sec" id="ubicacion" data-name="Ubicación">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Visítanos</span>
+            <h2 class="cx-h">Dónde estamos</h2>
+        </div>
+        <div class="cx-loc">
+            <div class="cx-card">
+                <h3 class="cx-h">Taller Diego Vélez</h3>
+                <ul class="cx-info">
+                    <li><span class="cx-pin"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span><div><small>Dirección</small><b>Boyacá 3-23 y Francisco Tamariz</b><br/>Cuenca, Ecuador</div></li>
+                    <li><span class="cx-pin"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span><div><small>Teléfono</small><b><a href="tel:+59372820267">07 2820-267</a></b></div></li>
+                    <!--WA--><li><span class="cx-pin"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></span><div><small>WhatsApp</small><b><a href="https://wa.me/{{WA}}" target="_blank">Escríbenos</a></b></div></li><!--/WA-->
+                    <li><span class="cx-pin"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7" stroke="#1a1005" stroke-width="2" fill="none"/></svg></span><div><small>Correo</small><b><a href="mailto:diegovels1@hotmail.com">diegovels1@hotmail.com</a></b></div></li>
+                </ul>
+            </div>
+            <div class="cx-map">
+                <iframe src="https://www.google.com/maps?q=-2.8866611,-79.0035207&amp;hl=es&amp;z=17&amp;output=embed" title="Ubicación del Taller Diego Vélez en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""></iframe>
+                <a class="cx-btn cx-btn-red" href="https://www.google.com/maps/place/Taller+DIEGO+VELEZ+SOLIZ/@-2.8866557,-79.0060956,17z/data=!3m1!4b1!4m6!3m5!1s0x91cd181c37447229:0x308106cb89595ca1!8m2!3d-2.8866611!4d-79.0035207!16s%2Fg%2F11g6ym8rwn" target="_blank">Abrir en Google Maps</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--WA--><a class="cx-fab" href="https://wa.me/{{WA}}?text=Hola%2C%20quisiera%20una%20revisi%C3%B3n%20para%20mi%20veh%C3%ADculo" target="_blank" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg></a><!--/WA-->
+
+        </div>
+    </t>
+</t>

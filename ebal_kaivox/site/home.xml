@@ -1,0 +1,85 @@
+<t name="Homepage" t-name="website.homepage">
+    <t t-call="website.layout">
+        <t t-set="pageName" t-value="'homepage'"/>
+        <div id="wrap" class="oe_structure oe_empty kx">
+
+<section class="kx-hero" data-name="Portada">
+    <div class="kx-wrap">
+        <div>
+            <span class="kx-eyebrow">Tecnología en Gualaceo</span>
+            <h1 class="kx-h">Celulares y accesorios <em>con garantía</em>, en un solo lugar</h1>
+            <p>Celulares, audífonos, cargadores, parlantes y mucho más. Compra en línea y retira en tienda, o escríbenos y te lo enviamos.</p>
+            <div class="kx-ctas">
+                <a href="/shop" class="kx-btn kx-btn-green">Ver la tienda →</a>
+                <a href="https://wa.me/593990941947?text=Hola%2C%20quisiera%20consultar%20por%20un%20producto" target="_blank" class="kx-btn kx-btn-ghost"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg>Escríbenos</a>
+            </div>
+        </div>
+        <div class="kx-hero-art"><img src="{{img:marca_hero.png}}" alt="Kaivox, innovación sin límites" style="width:100%;max-width:380px;height:auto;filter:drop-shadow(0 24px 50px rgba(0,0,0,.35))"/></div>
+    </div>
+</section>
+
+<section class="kx-usp" data-name="Ventajas">
+    <div class="kx-wrap">
+        <div><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Compra con garantía</b>Productos revisados</span></div>
+        <div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h3"/></svg><span><b>Pago seguro</b>Tarjeta con PayPhone</span></div>
+        <div><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11H3z"/><path d="M9 20v-6h6v6"/></svg><span><b>Retiro en tienda</b>Calle Colón, Gualaceo</span></div>
+        <div><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg><span><b>Atención por WhatsApp</b>099 094 1947</span></div>
+    </div>
+</section>
+
+<section class="kx-sec" data-name="Categorías">
+    <div class="kx-wrap">
+        <div class="kx-sec-head"><h2 class="kx-h">Todo en un solo lugar<small>Navega por nuestras categorías</small></h2></div>
+        <div class="kx-tiles">
+{{TILES}}
+        </div>
+    </div>
+</section>
+
+{{ROWS}}
+
+<section class="kx-wrap" data-name="Servicio técnico">
+    <div class="kx-service">
+        <div>
+            <h2 class="kx-h">¿Tu celular tiene un problema?</h2>
+            <p>Cambio de pantalla (display), pin de carga y más. Escríbenos con el modelo de tu equipo y te decimos qué necesita y cuánto cuesta.</p>
+        </div>
+        <a href="https://wa.me/593990941947?text=Hola%2C%20necesito%20una%20revisi%C3%B3n%20para%20mi%20celular" target="_blank" class="kx-btn kx-btn-green">Consultar reparación</a>
+    </div>
+</section>
+
+<section class="kx-sec" data-name="Marcas">
+    <div class="kx-wrap">
+        <div class="kx-sec-head"><h2 class="kx-h">Marcas que encuentras<small>Y muchas más en tienda</small></h2></div>
+        <div class="kx-brands"><span>Honor</span><span>Redmi · Xiaomi</span><span>Infinix</span><span>Motorola</span><span>Samsung</span><span>Nokia</span><span>JBL</span><span>Kingston</span><span>LDNIO</span><span>Toocki</span><span>Lenovo</span><span>TP-Link</span></div>
+    </div>
+</section>
+
+<section class="kx-sec" id="ubicacion" data-name="Ubicación" style="padding-bottom:30px">
+    <div class="kx-wrap">
+        <div class="kx-sec-head"><h2 class="kx-h">Visítanos<small>Estamos en el centro de Gualaceo</small></h2></div>
+        <div class="kx-loc">
+            <div class="kx-loc-card">
+                <h3 class="kx-h">Kaivox</h3>
+                <ul class="kx-info">
+                    <li><span class="kx-pin"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span><div><small>Dirección</small><b>Calle Colón, entre Luis Cordero y Vicente Peña Reyes (10-54)</b><br/>Gualaceo, Azuay</div></li>
+                    <li><span class="kx-pin"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span><div><small>Teléfono y WhatsApp</small><b><a href="tel:+593990941947">099 094 1947</a></b></div></li>
+                    <li><span class="kx-pin"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7" stroke="#35545f" stroke-width="2" fill="none"/></svg></span><div><small>Correo</small><b><a href="mailto:kaivox03@gmail.com">kaivox03@gmail.com</a></b></div></li>
+                </ul>
+                <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+                    <a class="kx-btn kx-btn-green" href="https://www.google.com/maps/place/KAIVOX/@-2.8916231,-78.7797522,17z/data=!3m1!4b1!4m6!3m5!1s0x91cd0500474b0e69:0x38585724c9b6e344!8m2!3d-2.8916285!4d-78.7771773!16s%2Fg%2F11ldgpf4xc" target="_blank">Cómo llegar</a>
+                    <a class="kx-btn kx-btn-wa" href="https://wa.me/593990941947" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+            <div class="kx-map">
+                <iframe src="https://www.google.com/maps?q=-2.8916285,-78.7771773&amp;hl=es&amp;z=17&amp;output=embed" title="Ubicación de Kaivox en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="kx-fab" href="https://wa.me/593990941947?text=Hola%2C%20quisiera%20consultar%20por%20un%20producto" target="_blank" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg></a>
+
+        </div>
+    </t>
+</t>

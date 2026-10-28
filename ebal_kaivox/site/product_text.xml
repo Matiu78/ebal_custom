@@ -1,0 +1,8 @@
+<data inherit_id="website_sale.product" customize_show="True" active="True" name="Terms and Conditions" priority="21">
+    <xpath expr="//div[@id='o_product_terms_and_share']" position="inside">
+        <p class="text-muted mb-0">
+            Retiro en tienda: <b>Calle Colón, Gualaceo</b><br/>
+            ¿Dudas del producto? <a href="https://wa.me/593990941947" target="_blank"><u>Escríbenos por WhatsApp</u></a>
+        </p>
+    </xpath>
+</data>

@@ -1,0 +1,175 @@
+<t name="Homepage" t-name="website.homepage">
+    <t t-call="website.layout">
+        <t t-set="pageName" t-value="'homepage'"/>
+        <div id="wrap" class="oe_structure oe_empty eb">
+
+<section class="eb-hero" data-name="Portada">
+    <div class="eb-wrap eb-grid">
+        <div>
+            <span class="eb-kicker"><i></i>Sistema de gestión hecho en Ecuador</span>
+            <h1 class="eb-h">Software inteligente para negocios <span class="eb-grad">que crecen</span></h1>
+            <p class="lead">Un sistema todo en uno para administrar tu empresa de forma fácil, segura y eficiente. Facturación electrónica ilimitada, punto de venta, clientes, inventario, reportes y mucho más.</p>
+            <div class="eb-ctas">
+                <a href="/contactus" class="eb-btn eb-btn-main">Comienza hoy <span>→</span></a>
+                <a href="#planes" class="eb-btn eb-btn-ghost">Ver los planes</a>
+            </div>
+            <div class="eb-trust">Facturación electrónica SRI · Acceso desde cualquier lugar · Respaldo en la nube</div>
+            <div class="eb-hero-stats"><div class="eb-stat"><b>∞</b><span>facturas electrónicas, sin límite</span></div>
+        <div class="eb-stat"><b>24/7</b><span>tu sistema disponible desde la nube</span></div>
+        <div class="eb-stat"><b>1</b><span>solo sistema para vender, facturar y cobrar</span></div>
+        <div class="eb-stat"><b>2024</b><span>acompañando a negocios ecuatorianos</span></div></div>
+        </div>
+        <div>
+            <div class="eb-browser">
+                <div class="eb-bar"><i></i><i></i><i></i><span>ebalsoft.com</span></div>
+                <img src="{{img:hero_dashboard.webp}}" alt="Panel de EbalSoftware con ventas, facturas y clientes" loading="eager"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="eb-sec" data-name="Por qué importa">
+    <div class="eb-wrap eb-split">
+        <div>
+            <span class="eb-kicker"><i></i>Por qué importa</span>
+            <h2 class="eb-h">Hojas de cálculo y sistemas sueltos te cuestan tiempo y clientes</h2>
+            <p class="eb-muted">Facturar en un lado, cobrar en otro y llevar el inventario a mano provoca errores, retrasos y ventas perdidas. Con EbalSoftware todo queda conectado y al día, para que te dediques a hacer crecer tu negocio.</p>
+            <ul class="eb-check">
+                <li>Facturas autorizadas por el SRI en segundos</li>
+                <li>Ventas, cobros e inventario conectados en tiempo real</li>
+                <li>Tus clientes reciben sus comprobantes por WhatsApp y correo</li>
+            </ul>
+        </div>
+        <div class="eb-compare">
+            <div class="eb-cmp"><div><span>Proceso manual</span><span class="eb-muted">horas</span></div><div class="eb-track"><i style="width:92%;background:#3a4472"></i></div></div>
+            <div class="eb-cmp"><div><span>Con EbalSoftware</span><span class="eb-grad">minutos</span></div><div class="eb-track"><i style="width:22%;background:linear-gradient(90deg,#7c5cff,#119cff)"></i></div></div>
+            <p class="eb-muted" style="margin:6px 0 0;font-size:.92rem">Tiempo de cierre diario de caja y facturación: automatiza lo repetitivo y revisa todo desde un solo panel.</p>
+        </div>
+    </div>
+</section>
+
+<section class="eb-sec eb-sec-alt" data-name="Qué incluye">
+    <div class="eb-wrap">
+        <div class="eb-head">
+            <span class="eb-kicker"><i></i>Qué incluye</span>
+            <h2 class="eb-h">Todo lo que tu negocio necesita, <span class="eb-grad">en un solo lugar</span></h2>
+            <p>Módulos pensados para la forma en que se trabaja en Ecuador.</p>
+        </div>
+        <div class="eb-cards">
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div><h3>Facturación electrónica</h3><p>Facturas, notas de crédito y retenciones autorizadas por el SRI, sin límite.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4"/></svg></div><h3>Punto de venta</h3><p>Vende rápido en caja, con tickets, atajos de teclado y cierre de caja.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div><h3>Inventario</h3><p>Stock al día en cada bodega, kits de productos y movimientos claros.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Reportes en tiempo real</h3><p>Ventas, cobros y cierres de caja listos para tomar decisiones.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></div><h3>WhatsApp integrado</h3><p>Envía facturas, recordatorios y atiende a tus clientes desde el sistema.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div><h3>Cobros en línea</h3><p>Cobra con QR y link de pago con PayPhone, en caja o a distancia.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>App móvil</h3><p>Consulta ventas, cobra y emite facturas desde tu celular.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Seguro y respaldado</h3><p>Copias de seguridad automáticas y acceso con usuarios y permisos.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="eb-sec" data-name="Soluciones por giro">
+    <div class="eb-wrap">
+        <div class="eb-head">
+            <span class="eb-kicker"><i></i>Soluciones por giro de negocio</span>
+            <h2 class="eb-h">Se adapta a tu tipo de negocio</h2>
+            <p>Además de lo esencial, sumamos el módulo especializado que tu actividad necesita.</p>
+        </div>
+        <div class="eb-cards eb-5">
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9A5 5 0 0 1 12 6a5 5 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg></div><h3>Clínicas y consultorios</h3><p>Pacientes, historias clínicas, recetas y agenda de citas.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><circle cx="5" cy="9" r="2"/><circle cx="9" cy="5" r="2"/><circle cx="15" cy="5" r="2"/><circle cx="19" cy="9" r="2"/><path d="M8 17a4 4 0 0 1 8 0c0 2-2 3-4 3s-4-1-4-3z"/></svg></div><h3>Veterinarias</h3><p>Fichas de mascotas, vacunas, consultas y venta de productos.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M6 6v12M18 6v12M3 9v6M21 9v6M6 12h12"/></svg></div><h3>Gimnasios</h3><p>Membresías, control de acceso y cobros recurrentes.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M3 21V7l9-4 9 4v14M9 21v-6h6v6M8 10h.01M12 10h.01M16 10h.01"/></svg></div><h3>Hoteles</h3><p>Reservas, habitaciones, consumos y facturación al salir.</p></div>
+            <div class="eb-card"><div class="eb-ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3>Talleres mecánicos</h3><p>Órdenes de trabajo, repuestos, mano de obra y cobro inline.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="eb-sec eb-sec-alt" data-name="Cómo trabajamos">
+    <div class="eb-wrap">
+        <div class="eb-head">
+            <span class="eb-kicker"><i></i>Cómo trabajamos</span>
+            <h2 class="eb-h">Un proceso <span class="eb-grad">claro de principio a fin</span></h2>
+        </div>
+        <div class="eb-steps">
+            <div class="eb-step"><b>1</b><h3>Conversamos tu negocio</h3><p>Nos cuentas cómo vendes y qué necesitas; elegimos el plan adecuado.</p></div>
+            <div class="eb-step"><b>2</b><h3>Configuramos tu sistema</h3><p>Firma electrónica, puntos de emisión, productos y usuarios listos.</p></div>
+            <div class="eb-step"><b>3</b><h3>Te capacitamos</h3><p>Aprendes a facturar, vender y revisar tus reportes desde el primer día.</p></div>
+            <div class="eb-step"><b>4</b><h3>Creces con nosotros</h3><p>Agregamos módulos y mejoras a medida que tu negocio lo pide.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="eb-sec" id="planes" data-name="Planes">
+    <div class="eb-wrap">
+        <div class="eb-head">
+            <span class="eb-kicker"><i></i>Planes</span>
+            <h2 class="eb-h">Elige el plan para tu negocio</h2>
+            <p>Configuración instantánea, satisfacción total o le devolvemos su dinero.</p>
+        </div>
+        <div class="eb-plans">
+            <div class="eb-plan">
+                <h3>BÁSICO</h3>
+                <div class="eb-price">$35<small> / mes</small></div>
+                <p>Ideal para emprendedores y pequeñas empresas.</p>
+                <ul><li>Facturación ilimitada</li><li>2 usuarios</li><li>Módulo punto de venta</li><li class="eb-no">Sin soporte</li></ul>
+                <a href="/contactus" class="eb-btn eb-btn-ghost">Empezar ahora</a>
+            </div>
+            <div class="eb-plan eb-pop">
+                <span class="eb-tag">MÁS ELEGIDO</span>
+                <h3>PROFESIONAL</h3>
+                <div class="eb-price">$50<small> / mes</small></div>
+                <p>Herramientas para empresas en crecimiento. Mejore sus procesos y la productividad de su equipo.</p>
+                <ul><li>Facturación ilimitada</li><li>5 usuarios</li><li>Módulo punto de venta</li><li>Módulo personalizado giro de negocio</li></ul>
+                <a href="/contactus" class="eb-btn eb-btn-main">Empezar ahora</a>
+            </div>
+            <div class="eb-plan">
+                <h3>EXPERTO</h3>
+                <div class="eb-price">$75<small> / mes</small></div>
+                <p>Para negocios que quieren crecer y destacar.</p>
+                <ul><li>Facturación ilimitada</li><li>7 usuarios</li><li>Todos los módulos incluidos en planes de menor nivel</li><li>Manejo de redes sociales desde el sistema</li></ul>
+                <a href="/contactus" class="eb-btn eb-btn-ghost">Contáctenos</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="eb-sec eb-sec-alt" data-name="Empresa">
+    <div class="eb-wrap">
+        <div class="eb-head">
+            <span class="eb-kicker"><i></i>Estamos en buena compañía</span>
+            <h2 class="eb-h">Una maravillosa colaboración <span class="eb-grad">desde 2024</span></h2>
+        </div>
+        <div class="eb-company">
+            <div class="eb-card">
+                <h3 style="margin-top:0">REINOSO GOMEZ MATEO FRANCISCO</h3>
+                <ul class="eb-info">
+                    <li><b>RUC</b><span>0106774615001</span></li>
+                    <li><b>CELULAR</b><a href="tel:+593987521999" style="color:inherit">+593 987 521 999</a></li>
+                    <li><b>EMAIL</b><a href="mailto:reinoso.mateo78@gmail.com" style="color:inherit">reinoso.mateo78@gmail.com</a></li>
+                    <li><b>DIRECCIÓN</b><span>Calle del Retorno, S/N, Calle del Fico</span></li>
+                </ul>
+            </div>
+            <div class="eb-card eb-card-cta">
+                <h3 style="margin-top:0">¿Listo para ordenar y hacer crecer tu negocio?</h3>
+                <p>Empieza hoy con EbalSoftware: configuración instantánea y acompañamiento en cada paso. Escríbenos por WhatsApp al 098 339 7295 o déjanos tus datos y te mostramos el sistema funcionando con tu información.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px">
+                    <a href="https://wa.me/593983397295" target="_blank" class="eb-btn eb-btn-white">Escribir por WhatsApp</a>
+                    <a href="/contactus" class="eb-btn eb-btn-ghost">Contáctenos</a>
+                </div>
+                <h3 style="font-size:1rem;margin-top:30px">Redes sociales</h3>
+                <div class="eb-social">
+                    <a href="/website/social/facebook" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
+                    <a href="/website/social/instagram" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM17.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a>
+                    <a href="https://wa.me/593983397295" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div>
+    </t>
+</t>

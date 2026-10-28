@@ -1,0 +1,24 @@
+<data inherit_id="website.layout" name="Kaivox barra y categorías">
+    <xpath expr="//header[@id='top']" position="before">
+        <div class="kx-topbar" t-if="not no_header">
+            <div class="kx-wrap">
+                <span class="kx-top-left">Calle Colón, Gualaceo · Compra en línea y retira en tienda</span>
+                <span class="kx-top-right">
+                    <a href="/">Inicio</a>
+                    <a href="/contactus">Contáctenos</a>
+                    <a href="tel:+593990941947">📞 099 094 1947</a>
+                    <a href="https://wa.me/593990941947" target="_blank">WhatsApp</a>
+                    <a href="/#ubicacion">Cómo llegar</a>
+                </span>
+            </div>
+        </div>
+    </xpath>
+    <xpath expr="//header[@id='top']" position="after">
+        <nav class="kx-catnav" t-if="not no_header">
+            <div class="kx-wrap">
+                <a class="kx-all" href="/shop">☰ Todos los productos</a>
+{{NAV_CATS}}
+            </div>
+        </nav>
+    </xpath>
+</data>

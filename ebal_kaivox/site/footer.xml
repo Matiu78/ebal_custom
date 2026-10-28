@@ -1,0 +1,39 @@
+<data inherit_id="website.layout" name="Default">
+    <xpath expr="//div[@id='footer']" position="replace">
+        <div id="footer" class="oe_structure oe_structure_solo kx-footer" t-ignore="true" t-if="not no_footer">
+            <section class="s_text_block pt48 pb32" data-snippet="s_text_block" data-name="Text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 pb24">
+                            <img class="kx-flogo" src="{{img:logo_kaivox_claro.png}}" alt="Kaivox" loading="lazy"/>
+                            <p class="mt-3">Innovación sin límites. Celulares, audífonos, cargadores, parlantes y accesorios con garantía, en Gualaceo y en línea.</p>
+                        </div>
+                        <div class="col-6 col-lg-2 pb24">
+                            <h5 class="mb-3">Tienda</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/shop">Todos los productos</a></li>
+{{FOOTER_CATS}}
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-3 pb24">
+                            <h5 class="mb-3">Mi compra</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/shop/cart">Mi carrito</a></li>
+                                <li class="mb-2"><a href="/my/orders">Mis pedidos</a></li>
+                                <li class="mb-2"><a href="/web/login">Mi cuenta</a></li>
+                                <li class="mb-2"><a href="/contactus">Contáctenos</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 pb24">
+                            <h5 class="mb-3">Visítanos</h5>
+                            <p class="mb-2">Calle Colón, entre Luis Cordero y Vicente Peña Reyes (10-54)<br/>Gualaceo, Azuay</p>
+                            <p class="mb-1"><a href="tel:+593990941947">099 094 1947</a></p>
+                            <p class="mb-2"><a href="mailto:kaivox03@gmail.com">kaivox03@gmail.com</a></p>
+                            <a href="/#ubicacion">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </xpath>
+</data>

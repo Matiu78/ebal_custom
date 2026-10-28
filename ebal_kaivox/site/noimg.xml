@@ -1,0 +1,15 @@
+<data inherit_id="website_sale.products_item" name="Kaivox tarjeta sin foto">
+    <xpath expr="//span[@t-field='image_holder.image_1920']" position="attributes">
+        <attribute name="t-if">image_holder.image_128</attribute>
+    </xpath>
+    <xpath expr="//span[@t-field='image_holder.image_1920']" position="after">
+        <span t-else="" class="oe_product_image_img_wrapper kx-noimg-card position-absolute w-100 h-100"><img src="{{img:simbolo_kaivox.png}}" alt=""/></span>
+    </xpath>
+    <xpath expr="//div[hasclass('o_wsale_product_information')]" position="inside">
+        <div class="kx-list-add" t-if="len(product.product_variant_ids) == 1">
+            <input type="hidden" name="product_id" t-att-value="product.product_variant_id.id"/>
+            <input type="hidden" name="add_qty" value="1"/>
+            <button type="submit" class="kx-add">Agregar al carrito</button>
+        </div>
+    </xpath>
+</data>

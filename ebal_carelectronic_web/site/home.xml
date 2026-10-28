@@ -1,0 +1,143 @@
+<t name="Homepage" t-name="website.homepage">
+    <t t-call="website.layout">
+        <t t-set="pageName" t-value="'homepage'"/>
+        <div id="wrap" class="oe_structure oe_empty cx">
+
+<section class="cx-hero" data-name="Portada" style="--cx-hero:url('{{img:6237.webp}}')">
+    <div class="cx-wrap cx-grid">
+        <div>
+            <span class="cx-eyebrow">Electromecánica automotriz · Cuenca</span>
+            <h1 class="cx-h">Diagnóstico, electricidad y electrónica <em>para tu vehículo</em></h1>
+            <p class="lead">En Car Electrónic revisamos, reparamos y damos mantenimiento a tu auto con equipo de diagnóstico y un trato claro: te explicamos qué tiene y cuánto cuesta antes de repararlo.</p>
+            <div class="cx-ctas">
+                <a href="tel:+593981294927" class="cx-btn cx-btn-red"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Llamar ahora</a>
+                <a href="https://wa.me/593981294927?text=Hola%2C%20quisiera%20una%20revisi%C3%B3n%20para%20mi%20veh%C3%ADculo" target="_blank" class="cx-btn cx-btn-wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg>WhatsApp</a>
+                <a href="#ubicacion" class="cx-btn cx-btn-ghost">Cómo llegar</a>
+            </div>
+            <div class="cx-chips"><span>Diagnóstico</span><span>Electricidad</span><span>Electrónica</span><span>Inyección</span><span>Mantenimiento</span></div>
+        </div>
+        <div>
+            <img class="cx-logo" src="{{img:logo_carelectronic_alpha.png}}" alt="Car Electrónic, electromecánica automotriz" loading="eager"/>
+        </div>
+    </div>
+    <div class="cx-stats">
+        <div class="cx-wrap cx-row">
+            <div class="cx-stat"><b>+860</b><span>vehículos atendidos</span></div>
+            <div class="cx-stat"><b>+1.150</b><span>órdenes de trabajo</span></div>
+            <div class="cx-stat"><b>5</b><span>especialidades en un solo taller</span></div>
+            <div class="cx-stat"><b>En línea</b><span>consulta tu orden con la placa</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="cx-sec" id="servicios" data-name="Servicios">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Lo que hacemos</span>
+            <h2 class="cx-h">Servicios del taller</h2>
+            <p>Todo lo que tu vehículo necesita para arrancar, rendir y llegar seguro, resuelto por el mismo equipo.</p>
+        </div>
+        <div class="cx-services">
+            <div class="cx-svc"><span class="cx-num">01</span><div class="cx-ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div><h3 class="cx-h">Diagnóstico</h3><p>Lectura de fallas con escáner, pruebas de sensores y actuadores. Encontramos el problema real antes de cambiar piezas.</p></div>
+            <div class="cx-svc"><span class="cx-num">02</span><div class="cx-ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3 class="cx-h">Electricidad</h3><p>Batería, alternador, motor de arranque, luces, cableado y accesorios eléctricos. Instalación y reparación.</p></div>
+            <div class="cx-svc"><span class="cx-num">03</span><div class="cx-ico"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div><h3 class="cx-h">Electrónica</h3><p>Módulos y computadoras del vehículo, sensores, tablero de instrumentos y sistemas electrónicos de confort y seguridad.</p></div>
+            <div class="cx-svc"><span class="cx-num">04</span><div class="cx-ico"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/></svg></div><h3 class="cx-h">Inyección</h3><p>Limpieza y calibración de inyectores, bomba y sistema de combustible para recuperar potencia y bajar el consumo.</p></div>
+            <div class="cx-svc"><span class="cx-num">05</span><div class="cx-ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3 class="cx-h">Mantenimiento</h3><p>Preventivo y correctivo, con revisión completa para que no te quedes botado en la vía.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cx-sec cx-sec-alt" data-name="Por qué elegirnos">
+    <div class="cx-wrap cx-why">
+        <div>
+            <span class="cx-eyebrow">Por qué Car Electrónic</span>
+            <div class="cx-head" style="margin:14px 0 0"><h2 class="cx-h">Un taller que te mantiene informado</h2></div>
+            <ul>
+                <li><span class="cx-tick"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Presupuesto antes de reparar</b><span>Te enviamos la proforma por WhatsApp con el detalle del trabajo para que lo apruebes.</span></div></li>
+                <li><span class="cx-tick"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Consulta tu orden en línea</b><span>Con la placa de tu vehículo ves el estado y el detalle de tu orden de trabajo, sin llamar.</span></div></li>
+                <li><span class="cx-tick"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Registro del ingreso</b><span>Documentamos con fotos cómo llega tu vehículo, para tu tranquilidad y la nuestra.</span></div></li>
+                <li><span class="cx-tick"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><div><b>Trato directo</b><span>Hablas con quien revisa tu vehículo y te explicamos cada paso en palabras simples.</span></div></li>
+            </ul>
+        </div>
+        <div class="cx-photo"><img src="{{img:5756.webp}}" alt="Camioneta roja con el capó abierto en revisión de motor" loading="lazy"/></div>
+    </div>
+</section>
+
+<section class="cx-sec" id="galeria" data-name="Galería">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Trabajos reales</span>
+            <h2 class="cx-h">Vehículos en el taller</h2>
+            <p>Autos, camionetas y 4x4 de todas las marcas pasan por nuestras manos. Estas son fotos de nuestro trabajo diario.</p>
+        </div>
+        <div class="cx-gallery">
+            <figure><img src="{{img:6237.webp}}" alt="Ram 1500 en revisión" loading="lazy"/><figcaption>Ram 1500</figcaption></figure>
+            <figure><img src="{{img:6081.webp}}" alt="Ford F-150 en revisión" loading="lazy"/><figcaption>Ford F-150</figcaption></figure>
+            <figure><img src="{{img:6061.webp}}" alt="Chevrolet Corsa en revisión de motor" loading="lazy"/><figcaption>Chevrolet Corsa</figcaption></figure>
+            <figure><img src="{{img:5673.webp}}" alt="Chevrolet Grand Vitara en revisión de motor" loading="lazy"/><figcaption>Chevrolet Grand Vitara</figcaption></figure>
+            <figure><img src="{{img:6101.webp}}" alt="Kia Cerato taxi en revisión" loading="lazy"/><figcaption>Kia Cerato</figcaption></figure>
+            <figure><img src="{{img:5756.webp}}" alt="Chevrolet Luv en revisión de motor" loading="lazy"/><figcaption>Chevrolet Luv</figcaption></figure>
+            <figure><img src="{{img:5614.webp}}" alt="Lifan con el capó abierto" loading="lazy"/><figcaption>Lifan</figcaption></figure>
+            <figure><img src="{{img:6104.webp}}" alt="Kia Sportage roja" loading="lazy"/><figcaption>Kia Sportage</figcaption></figure>
+            <figure><img src="{{img:6025.webp}}" alt="Changan CS55 Plus híbrida" loading="lazy"/><figcaption>Changan CS55 Plus · Híbrida</figcaption></figure>
+            <figure><img src="{{img:5515.webp}}" alt="Camioneta 4x4 preparada" loading="lazy"/><figcaption>Camioneta 4x4</figcaption></figure>
+            <figure><img src="{{img:5751.webp}}" alt="Audi A4" loading="lazy"/><figcaption>Audi A4</figcaption></figure>
+            <figure><img src="{{img:5491.webp}}" alt="Datsun 1200 clásico con el capó abierto" loading="lazy"/><figcaption>Datsun 1200 · Clásico</figcaption></figure>
+        </div>
+        <p class="cx-note">Por privacidad de nuestros clientes, las placas de los vehículos aparecen difuminadas.</p>
+    </div>
+</section>
+
+<section class="cx-sec cx-sec-alt" data-name="Marcas">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Marcas que atendemos</span>
+            <h2 class="cx-h">Experiencia con las marcas de tu garaje</h2>
+            <p>Las que más pasan por el taller, y muchas otras. Si no ves la tuya, consúltanos.</p>
+        </div>
+        <div class="cx-brands"><span>Chevrolet</span><span>Hyundai</span><span>Toyota</span><span>Kia</span><span>Ford</span><span>Mazda</span><span>Volkswagen</span><span>Suzuki</span><span>Nissan</span><span>Mitsubishi</span><span>Peugeot</span><span>JAC</span></div>
+    </div>
+</section>
+
+<section class="cx-sec" data-name="Consulta de orden" style="padding-bottom:40px">
+    <div class="cx-wrap">
+        <div class="cx-track">
+            <div>
+                <h2 class="cx-h">¿Dejaste tu vehículo en el taller?</h2>
+                <p>Consulta el estado y el detalle de tu orden de trabajo en línea, solo con la placa de tu vehículo.</p>
+            </div>
+            <a href="/consultar-orden" class="cx-btn">Consultar mi orden</a>
+        </div>
+    </div>
+</section>
+
+<section class="cx-sec" id="ubicacion" data-name="Ubicación">
+    <div class="cx-wrap">
+        <div class="cx-head">
+            <span class="cx-eyebrow">Visítanos</span>
+            <h2 class="cx-h">Dónde estamos</h2>
+        </div>
+        <div class="cx-loc">
+            <div class="cx-card">
+                <h3 class="cx-h">Car Electrónic</h3>
+                <ul class="cx-info">
+                    <li><span class="cx-pin"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span><div><small>Estamos ubicados en</small><b>Av. Del Tejar y César Andrade y Cordero (4 esquinas de San José de Balzay)</b><br/>Cuenca, Ecuador</div></li>
+                    <li><span class="cx-pin"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span><div><small>Teléfonos</small><b><a href="tel:+593981294927">098 129 4927</a> · <a href="tel:+593987973365">098 797 3365</a></b></div></li>
+                    <li><span class="cx-pin"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></span><div><small>WhatsApp</small><b><a href="https://wa.me/593981294927" target="_blank">Escríbenos</a></b></div></li>
+                    <li><span class="cx-pin"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></span><div><small>Facebook</small><b><a href="https://www.facebook.com/photo?fbid=1651007329880737&amp;set=a.588684349446379" target="_blank">Síguenos en Facebook</a></b></div></li>
+                </ul>
+                <img class="cx-front" src="{{img:taller.webp}}" alt="Fachada del taller Car Electrónic" loading="lazy"/>
+            </div>
+            <div class="cx-map">
+                <iframe src="https://www.google.com/maps?q=-2.885273,-79.0431637&amp;hl=es&amp;z=17&amp;output=embed" title="Ubicación de Car Electrónic en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""></iframe>
+                <a class="cx-btn cx-btn-red" href="https://www.google.com/maps/place/CAR+ELECTR%C3%93NIC/@-2.8852676,-79.0457386,17z/data=!3m1!4b1!4m6!3m5!1s0x91cd23cc270d0f23:0xa40f54a66a05f190!8m2!3d-2.885273!4d-79.0431637!16s%2Fg%2F11zy6drb1z" target="_blank">Abrir en Google Maps</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="cx-fab" href="https://wa.me/593981294927?text=Hola%2C%20quisiera%20una%20revisi%C3%B3n%20para%20mi%20veh%C3%ADculo" target="_blank" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg></a>
+
+        </div>
+    </t>
+</t>

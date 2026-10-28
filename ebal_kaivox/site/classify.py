@@ -1,0 +1,26 @@
+import re
+# (clave, nombre, regex) — el primero que coincide gana
+CATS = [
+    ("chips", "Chips y eSIM", r"\bCHIP\b|ESIM"),
+    ("celulares", "Celulares y tablets", r"^(HONOR\s+(\d|PLAY|CHOICE|X)|REDMI\s+(\d|NOTE|PAD)|INFINIX\s+(HOT|SMART|NOTE)|MOTO\s+G|MOTOROLA\s+G\d|NOKIA\s+\d{3}|CELULAR|SAMSUNG\s+A\d|TECNO|TELEFONO|ENV\s+(NEO|PIXEL)|TABLET)"),
+    ("computacion", "Computación, TV y gaming", r"ROUTER|EXTENSOR DE|TP-?LINK|RJ45|^CONTROL|COOLER|TV STICK|TYPE-C TO HDTV|LAPIZ OPTICO|COMBO PRO|^(ADAPTADOR|APADTADOR).*(WIFI|HDMI|VGA|VIDEO CAPTURE)|IMPRESORA|ETHERNET|^CABLE HDMI|MOUSE|KEYBOARD|TECLADO|PIZARRON|^AMAZON|FIRE (TV|STICK)|TV BOX|CONSOLA|JOYSTICK|GAMEPAD|PS5|CONTROL DE|SMART TV|^ADAPTADOR WIFI"),
+    ("cables", "Cables y adaptadores", r"^(CABLE|SUPER CABLE|ADAPTADOR|OTG|HUB|AUXILIAR|LIGHTNING|TYPE-C|CBA)\b"),
+    ("cargadores", "Cargadores y power banks", r"CUBO|CHARGER|\d+W\b|\bV8\b|USB A T-C|SUPER CABLE|^CBA|^ECCO|VOLTME|EXTENCION|^YM |^RK |^SKY BLUE|^WOLF KING|^(CABLE|CARGADOR|CARDADOR|ADAPTADOR|CUBO|POWER ?BANK|POWERBANK|MAGSAFE|OTG|HUB|AUXILIAR|ALIENS|MOTOROLA 30W|JH-030|REGLETA|LDNIO|LENSUN|MICCELL|LIGHTNING|TOOCKI)|\bCARGADOR\b.*(CARRO|VEHICULAR)|POWER ?BANK"),
+    ("relojes", "Relojes y wearables", r"RELOJ|WATCH|CORREA|GAFA|SMART GLASSES"),
+    ("audifonos", "Audífonos y micrófonos", r"AUDIFON|AURICULAR|AIRPOD|ARIPODS|AIRBUDS|BUDS|MICROFONO|MANOS LIBRES|AUFIFONOS|EARPODS|^CASCO|HEADSET|DIADEMA"),
+    ("parlantes", "Parlantes y radios", r"PARLANTE|RADIO|BARRA DE SONIDO|ALEXA|MODULADOR"),
+    ("memorias", "Memorias y USB", r"MEMORIA|MICRO\s?S[DG]|\bSD\b|FLASH MEMORY|USB\s?FLASH|USB ZIPPY"),
+    ("micas", "Micas, fundas y accesorios", r"^MICA|PROTECTOR|^FUNDA|^ESTUCHE|CASE\b|FORRO|TARJETERO|SKIN|TAPA POLVO|VENTOSAS|LLAVERO|GATILLOS|PAR DEDALES"),
+    ("soportes", "Soportes y selfie", r"HOLDER|MONOPOD|TRIPODE|SOPORTE|PEDESTAL|SELFIE"),
+    ("iluminacion", "Iluminación y cámaras", r"ARO DE LUZ|\bLED\b|\bLUZ\b|LIGHT|LAMPARA|LINTERNA|LUCES|CAMARA|ASTRONAUTA|PROYECTOR|FOCO|FLASHLIGHT|GPS|DRON"),
+    ("pilas", "Pilas y baterías", r"^PILA|PILAS|BATERIA"),
+]
+OTHER = ("otros", "Otros productos")
+EXCLUDE = re.compile(r"^(ANTICIPO|COBRO|MANO DE OBRA|CAMBIO|REVISION|SERVICIO TECNICO)", re.I)
+
+def classify(name):
+    n = (name or "").strip().upper()
+    for key, label, rx in CATS:
+        if re.search(rx, n):
+            return key
+    return OTHER[0]
