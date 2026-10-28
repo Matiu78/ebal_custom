@@ -33,6 +33,23 @@
     </div>
 </section>
 
+<section class="mb-sec" id="trabajos" data-name="Nuestro trabajo">
+    <div class="mb-wrap">
+        <div class="mb-sec-head"><h2 class="mb-h">Nuestro trabajo<small>Autos de rally, UTV, karts, motos y bicicletas de downhill pasan por nuestro taller</small></h2></div>
+        <div class="mb-gallery">
+            <figure class="mb-g-big"><img src="{{img:foto_utv_suspension.jpg}}" alt="Ajuste de suspensión en un UTV Kawasaki" loading="lazy"/></figure>
+            <figure><img src="{{img:foto_clio_taller.jpg}}" alt="Mecánica de un auto de rally en el taller" loading="lazy"/></figure>
+            <figure><img src="{{img:foto_downhill_salto.jpg}}" alt="Bicicleta de downhill en competencia" loading="lazy"/></figure>
+            <figure><img src="{{img:foto_autos_rally.jpg}}" alt="Autos de rally preparados por MDBK" loading="lazy"/></figure>
+            <figure><img src="{{img:foto_taller_noche.jpg}}" alt="El taller trabajando de noche" loading="lazy"/></figure>
+            <figure><img src="{{img:foto_utv_garage.jpg}}" alt="UTV y auto de rally en el garaje" loading="lazy"/></figure>
+            <figure><img src="{{img:foto_downhill_carrera.jpg}}" alt="Piloto de downhill en carrera" loading="lazy"/></figure>
+            <figure><img src="{{img:foto_kart.jpg}}" alt="Kart de competencia en el taller" loading="lazy"/></figure>
+            <figure><img src="{{img:foto_equipo_moto.jpg}}" alt="El equipo de MDBK con una moto de aventura" loading="lazy"/></figure>
+        </div>
+    </div>
+</section>
+
 <section class="mb-sec" data-name="Accesos">
     <div class="mb-wrap">
         <div class="mb-strip">
