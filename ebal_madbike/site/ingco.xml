@@ -26,7 +26,8 @@
                     <span class="mb-card-body">
                         <span class="mb-card-code" t-out="p.default_code or ''"/>
                         <span class="mb-card-name" t-out="p.name"/>
-                        <span class="mb-card-price" t-out="prices.get(p.id, {}).get('price_reduce', p.list_price)" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span class="mb-card-price" t-if="p.list_price" t-out="prices.get(p.id, {}).get('price_reduce', p.list_price)" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span class="mb-card-price mb-ask" t-else="">Consultar precio</span>
                     </span>
                 </a>
             </t>

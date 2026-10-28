@@ -47,7 +47,8 @@ def card(var="p"):
                     <span class="mb-card-body">
                         <span class="mb-card-code" t-out="%(v)s.default_code or ''"/>
                         <span class="mb-card-name" t-out="%(v)s.name"/>
-                        <span class="mb-card-price" t-out="prices.get(%(v)s.id, {}).get('price_reduce', %(v)s.list_price)" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span class="mb-card-price" t-if="%(v)s.list_price" t-out="prices.get(%(v)s.id, {}).get('price_reduce', %(v)s.list_price)" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span class="mb-card-price mb-ask" t-else="">Consultar precio</span>
                     </span>
                 </a>''' % {"v": var}
 
