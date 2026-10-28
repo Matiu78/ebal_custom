@@ -3,19 +3,19 @@
         <t t-set="pageName" t-value="'homepage'"/>
         <div id="wrap" class="oe_structure oe_empty mb">
 
-<section class="mb-hero" data-name="Portada">
+<section class="mb-hero mb-hero-photo" data-name="Portada" style="--mb-hero-img:url({{img:foto_autos_rally.jpg}})">
     <div class="mb-wrap">
-        <div>
+        <div class="mb-hero-text">
+            <img class="mb-hero-mark" src="{{img:logo_madbike.png}}" alt="MDBK Racing Suspensions"/>
             <span class="mb-eyebrow">Cuenca · Ecuador</span>
-            <h1 class="mb-h">Suspensión y mecánica de competencia</h1>
-            <p>Calibración de chasis y suspensión con balanzas electrónicas, preparación para rally, diagnóstico eléctrico y todo el mantenimiento de tu vehículo. También encuentras repuestos, lubricantes y herramientas INGCO en nuestra tienda.</p>
+            <h1 class="mb-h">Aquí se prepara <em>para ganar</em></h1>
+            <p>Suspensión y mecánica de competencia para pilotos de rally, downhill, karting y todoterreno. Calibramos, ajustamos y dejamos tu máquina lista para la largada. Y para tu auto de todos los días, también.</p>
             <div class="mb-ctas">
                 <a href="/appointment" class="mb-btn">Agendar una cita</a>
                 <a href="/shop" class="mb-btn mb-btn-ghost">Ver la tienda</a>
                 <a href="{{WA}}?text=Hola%2C%20quisiera%20consultar%20por%20un%20servicio" target="_blank" class="mb-btn mb-btn-ghost">WhatsApp</a>
             </div>
         </div>
-        <div class="mb-hero-logo"><img src="{{img:logo_madbike.png}}" alt="MDBK Racing Suspensions"/></div>
     </div>
 </section>
 
@@ -29,6 +29,18 @@
             <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><h3>Diagnóstico eléctrico</h3><p>Revisión del sistema eléctrico y cableado, reparación de computadora, ABS, dirección asistida electrónica y tablero.</p></div>
             <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M3 15l2-6a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 6v4H3z"/><circle cx="7.5" cy="15" r="1.5"/><circle cx="16.5" cy="15" r="1.5"/></svg><h3>Latonería y carrocería</h3><p>Corrección de bases, desarmado y armado de carrocería, lavado completo del vehículo.</p></div>
             <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg><h3>Repuestos y lubricantes</h3><p>Aceites, filtros, líquidos, pernería y más, disponibles en la tienda en línea y en el taller.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-band" data-name="Campeones" style="--mb-band-img:url({{img:foto_utv_garage.jpg}})">
+    <div class="mb-wrap">
+        <div class="mb-band-text">
+            <span class="mb-eyebrow">Competencia</span>
+            <h2 class="mb-h">La diferencia entre llegar y <em>ganar</em></h2>
+            <p>Los pilotos que quieren el podio no dejan nada al azar. En MDBK ajustamos la suspensión a tu peso, tu estilo y la pista, para que cada curva, cada salto y cada tramo sumen a tu favor.</p>
+            <ul class="mb-pills"><li>Rally</li><li>Downhill</li><li>Karting</li><li>UTV</li><li>Motos</li></ul>
+            <a href="/appointment" class="mb-btn">Prepara tu próxima carrera</a>
         </div>
     </div>
 </section>
@@ -47,6 +59,17 @@
             <figure><img src="{{img:foto_kart.jpg}}" alt="Kart de competencia en el taller" loading="lazy"/></figure>
             <figure><img src="{{img:foto_equipo_moto.jpg}}" alt="El equipo de MDBK con una moto de aventura" loading="lazy"/></figure>
         </div>
+    </div>
+</section>
+
+<section class="mb-split" data-name="Del taller al podio">
+    <div class="mb-split-img" style="background-image:url({{img:foto_utv_suspension.jpg}})"></div>
+    <div class="mb-split-text">
+        <span class="mb-eyebrow">Del taller al podio</span>
+        <h2 class="mb-h">Medimos, ajustamos y <em>probamos contigo</em></h2>
+        <p>Balanzas electrónicas, corrección de ángulos y bumpsteer, amortiguadores a medida. Un setup bien hecho se siente desde la primera vuelta y se nota en el cronómetro.</p>
+        <p class="mb-split-sign">Trabajamos con equipos de rally, pilotos de downhill y karting, y dueños de UTV y motos.</p>
+        <a href="{{WA}}?text=Hola%2C%20quiero%20preparar%20mi%20veh%C3%ADculo%20para%20competir" target="_blank" class="mb-btn mb-btn-dark">Hablemos de tu setup</a>
     </div>
 </section>
 
