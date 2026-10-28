@@ -1,0 +1,116 @@
+<style id="mb-style">
+:root{--mb-black:#0a0a0a;--mb-ink:#151515;--mb-line:#2b2b2b;--mb-mute:#9b9b9b;--mb-white:#fff;--mb-ingco:#ff9900}
+body{font-family:"Inter","Segoe UI",system-ui,sans-serif;color:#151515;background:#fff}
+h1,h2,h3,.mb-h{font-family:"Barlow Condensed","Oswald","Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;font-weight:800}
+/* cabecera negra, como el logo */
+header#top,header#top .navbar,header#top .o_header_standard{background:var(--mb-black)!important;color:#fff}
+header#top .navbar-brand img{max-height:54px;width:auto}
+header#top .nav-link,header#top .navbar-toggler,header#top a:not(.btn){color:#fff!important;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.86rem}
+header#top .nav-link:hover,header#top .nav-link.active{color:#fff!important;box-shadow:inset 0 -3px 0 #fff}
+header#top .nav-link[href^="/ingco"]{color:var(--mb-ingco)!important}
+header#top .nav-link[href^="/ingco"]:hover{box-shadow:inset 0 -3px 0 var(--mb-ingco)}
+header#top .btn-primary{background:#fff;border-color:#fff;color:#000}
+/* botones */
+.btn-primary,.mb-btn{background:#0a0a0a;border-color:#0a0a0a;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.btn-primary:hover{background:#2b2b2b;border-color:#2b2b2b}
+.mb-btn{display:inline-block;padding:.8rem 1.5rem;border-radius:2px;text-decoration:none;border:2px solid #fff;background:#fff;color:#000}
+.mb-btn:hover{background:transparent;color:#fff}
+.mb-btn-ghost{background:transparent;color:#fff}
+.mb-btn-ghost:hover{background:#fff;color:#000}
+.mb-btn-dark{background:#0a0a0a;border-color:#0a0a0a;color:#fff}
+.mb-btn-dark:hover{background:#fff;color:#0a0a0a}
+.mb-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.mb-sec{padding:64px 0}
+.mb-sec-dark{background:var(--mb-black);color:#fff}
+.mb-sec-grey{background:#f2f2f2}
+.mb-sec-head{margin-bottom:30px}
+.mb-sec-head h2{font-size:2.3rem;margin:0}
+.mb-sec-head small{display:block;font-family:inherit;text-transform:none;letter-spacing:0;font-weight:400;color:#6b6b6b;font-size:1rem;margin-top:6px}
+.mb-sec-dark .mb-sec-head small{color:var(--mb-mute)}
+/* portada */
+.mb-hero{background:#000;color:#fff;padding:70px 0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 22px)}
+.mb-hero .mb-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.mb-hero h1{font-size:3.6rem;line-height:1;margin:14px 0 18px}
+.mb-hero p{color:#cfcfcf;font-size:1.1rem;max-width:520px}
+.mb-eyebrow{display:inline-block;border:1px solid #fff;padding:4px 12px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.mb-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.mb-hero-logo{text-align:center}
+.mb-hero-logo img{width:100%;max-width:470px;height:auto}
+/* servicios */
+.mb-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mb-svc{border:1px solid var(--mb-line);background:var(--mb-ink);padding:26px;border-radius:2px;transition:transform .15s,border-color .15s}
+.mb-svc:hover{transform:translateY(-3px);border-color:#fff}
+.mb-svc svg{width:38px;height:38px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.mb-svc h3{font-size:1.35rem;margin:14px 0 8px;color:#fff}
+.mb-svc p{margin:0;color:#b4b4b4;font-size:.95rem}
+/* franja de orden y reservas */
+.mb-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid #0a0a0a}
+.mb-strip a{padding:26px;text-decoration:none;color:#0a0a0a;border-right:2px solid #0a0a0a;display:block}
+.mb-strip a:last-child{border-right:0}
+.mb-strip a:hover{background:#0a0a0a;color:#fff}
+.mb-strip b{display:block;font-family:"Barlow Condensed","Oswald","Arial Narrow",Impact,sans-serif;text-transform:uppercase;font-size:1.5rem}
+/* banner INGCO */
+.mb-ingco{background:var(--mb-ingco);color:#000}
+.mb-ingco .mb-wrap{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;padding-top:42px;padding-bottom:42px}
+.mb-ingco h2{font-size:2.6rem;margin:0 0 8px;color:#000}
+.mb-ingco p{margin:0;font-size:1.05rem;max-width:640px}
+.mb-ingco .mb-btn{background:#000;border-color:#000;color:#fff}
+.mb-ingco .mb-btn:hover{background:transparent;color:#000}
+/* tarjetas de producto (portada y /ingco) */
+.mb-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.mb-card{border:1px solid #ececec;background:#fff;display:flex;flex-direction:column;text-decoration:none;color:#151515}
+.mb-card:hover{border-color:#0a0a0a;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.mb-card-img{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:#fff;padding:10px}
+.mb-card-img img{max-width:100%;max-height:100%;object-fit:contain}
+.mb-card-img.mb-noimg{background:#0a0a0a}
+.mb-card-img.mb-noimg img{width:70%;opacity:.9}
+.mb-card-body{padding:12px 14px 16px;display:flex;flex-direction:column;gap:4px}
+.mb-card-code{font-weight:800;font-size:.85rem;color:#0a0a0a}
+.mb-card-name{font-size:.93rem;line-height:1.25;min-height:2.4em}
+.mb-card-price{font-weight:800;font-size:1.1rem}
+.mb-ingco-page .mb-card-code{color:var(--mb-ingco)}
+.mb-empty{border:2px dashed #cfcfcf;padding:40px;text-align:center;color:#6b6b6b}
+/* INGCO: franja naranja y botones naranjas dentro de su categoría y de su página */
+html.ingco header#top{border-bottom:6px solid var(--mb-ingco)}
+html.ingco .btn-primary,html.ingco .o_wsale_product_btn .btn{background:var(--mb-ingco);border-color:var(--mb-ingco);color:#000}
+html.ingco .btn-primary:hover{background:#000;border-color:#000;color:#fff}
+html.ingco #products_grid .card,html.ingco .oe_product_cart{border-radius:0}
+html.ingco .o_wsale_products_main_row h1,html.ingco .o_wsale_products_main_row .h1{color:#000}
+.mb-ingco-hero{background:#000;color:#fff}
+.mb-ingco-hero .mb-wrap{padding-top:34px;padding-bottom:34px}
+.mb-ingco-hero h1{font-size:3rem;margin:0 0 10px;color:var(--mb-ingco)}
+.mb-ingco-hero p{max-width:760px;color:#ddd;margin:0}
+.mb-ingco-subs{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}
+.mb-ingco-subs a{border:2px solid var(--mb-ingco);color:#000;background:#fff;padding:8px 16px;font-weight:800;text-transform:uppercase;text-decoration:none;font-size:.85rem}
+.mb-ingco-subs a:hover{background:var(--mb-ingco)}
+/* ubicación */
+.mb-loc{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px}
+.mb-loc-card{background:var(--mb-ink);border:1px solid var(--mb-line);padding:30px}
+.mb-loc-card h3{font-size:1.8rem;color:#fff;margin-top:0}
+.mb-info{list-style:none;padding:0;margin:0}
+.mb-info li{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--mb-line)}
+.mb-info li:last-child{border-bottom:0}
+.mb-info small{display:block;color:var(--mb-mute);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}
+.mb-info a{color:#fff}
+.mb-map iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(1) contrast(1.1)}
+.mb-fab{position:fixed;right:18px;bottom:18px;z-index:99;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.mb-fab svg{width:30px;height:30px;fill:#fff}
+/* pie */
+.mb-footer{background:#0a0a0a;color:#cfcfcf}
+.mb-footer h5{color:#fff;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem}
+#footer.mb-footer a,#footer.mb-footer li a{color:#cfcfcf!important;text-decoration:none}
+#footer.mb-footer a:hover{color:#fff!important;text-decoration:underline}
+#footer.mb-footer,#footer.mb-footer p{color:#cfcfcf}
+.mb-flogo{max-width:200px;height:auto}
+@media(max-width:991px){
+.mb-hero .mb-wrap,.mb-loc,.mb-ingco .mb-wrap{grid-template-columns:1fr}
+.mb-hero h1{font-size:2.5rem}
+.mb-grid3{grid-template-columns:1fr 1fr}
+.mb-strip{grid-template-columns:1fr}.mb-strip a{border-right:0;border-bottom:2px solid #0a0a0a}
+.mb-cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:575px){.mb-grid3{grid-template-columns:1fr}.mb-sec{padding:44px 0}}
+</style>
+<script>
+(function(){try{if(/^\/shop\/category\/ingco(-\d+)?(\/|$)/.test(location.pathname)||/^\/ingco(\/|$)/.test(location.pathname)){document.documentElement.classList.add('ingco');}}catch(e){}})();
+</script>

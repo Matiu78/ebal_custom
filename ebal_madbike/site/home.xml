@@ -1,0 +1,87 @@
+<t name="Homepage" t-name="website.homepage">
+    <t t-call="website.layout">
+        <t t-set="pageName" t-value="'homepage'"/>
+        <div id="wrap" class="oe_structure oe_empty mb">
+
+<section class="mb-hero" data-name="Portada">
+    <div class="mb-wrap">
+        <div>
+            <span class="mb-eyebrow">Cuenca · Ecuador</span>
+            <h1 class="mb-h">Suspensión y mecánica de competencia</h1>
+            <p>Calibración de chasis y suspensión con balanzas electrónicas, preparación para rally, diagnóstico eléctrico y todo el mantenimiento de tu vehículo. También encuentras repuestos, lubricantes y herramientas INGCO en nuestra tienda.</p>
+            <div class="mb-ctas">
+                <a href="/appointment" class="mb-btn">Agendar una cita</a>
+                <a href="/shop" class="mb-btn mb-btn-ghost">Ver la tienda</a>
+                <a href="{{WA}}?text=Hola%2C%20quisiera%20consultar%20por%20un%20servicio" target="_blank" class="mb-btn mb-btn-ghost">WhatsApp</a>
+            </div>
+        </div>
+        <div class="mb-hero-logo"><img src="{{img:logo_madbike.png}}" alt="MDBK Racing Suspensions"/></div>
+    </div>
+</section>
+
+<section class="mb-sec mb-sec-dark" id="servicios" data-name="Servicios">
+    <div class="mb-wrap">
+        <div class="mb-sec-head"><h2 class="mb-h">Lo que hacemos<small>Del ajuste fino de competencia al mantenimiento de todos los días</small></h2></div>
+        <div class="mb-grid3">
+            <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M7 3h10M7 21h10"/><path d="M8 3c0 3 8 3 8 6s-8 3-8 6 8 3 8 6"/></svg><h3>Suspensión y chasis</h3><p>Calibración de chasis y suspensión con balanzas electrónicas, corrección de ángulos y bumpsteer, cambio de aceite de amortiguadores.</p></div>
+            <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h13l-3 4 3 4H5"/></svg><h3>Preparación para competencia</h3><p>Revisión completa y ajuste total del vehículo antes de cada rally, y armado de punta a punta.</p></div>
+            <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.7 2.7-2.3-.6-.6-2.3z"/></svg><h3>Mecánica y mantenimiento</h3><p>Cambio de aceite y filtros, frenos, refrigeración, inyectores, combustible y reparaciones menores.</p></div>
+            <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><h3>Diagnóstico eléctrico</h3><p>Revisión del sistema eléctrico y cableado, reparación de computadora, ABS, dirección asistida electrónica y tablero.</p></div>
+            <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M3 15l2-6a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 6v4H3z"/><circle cx="7.5" cy="15" r="1.5"/><circle cx="16.5" cy="15" r="1.5"/></svg><h3>Latonería y carrocería</h3><p>Corrección de bases, desarmado y armado de carrocería, lavado completo del vehículo.</p></div>
+            <div class="mb-svc"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg><h3>Repuestos y lubricantes</h3><p>Aceites, filtros, líquidos, pernería y más, disponibles en la tienda en línea y en el taller.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-sec" data-name="Accesos">
+    <div class="mb-wrap">
+        <div class="mb-strip">
+            <a href="/appointment"><b>Reservas</b>Agenda tu cita en línea</a>
+            <a href="/consultar-orden"><b>Consultar mi orden</b>Mira cómo va tu vehículo</a>
+            <a href="/shop"><b>Tienda</b>Repuestos, lubricantes y herramientas</a>
+        </div>
+    </div>
+</section>
+
+<section class="mb-ingco" data-name="INGCO">
+    <div class="mb-wrap">
+        <div>
+            <h2 class="mb-h">Herramientas INGCO</h2>
+            <p>Herramientas eléctricas, manuales y accesorios INGCO para el taller, la obra y el hogar. Resistentes, con repuestos y respaldo.</p>
+        </div>
+        <a href="/ingco" class="mb-btn">Ver productos INGCO</a>
+    </div>
+</section>
+
+{{INGCO_ROW}}
+
+{{SHOP_ROW}}
+
+<section class="mb-sec mb-sec-dark" id="ubicacion" data-name="Ubicación">
+    <div class="mb-wrap">
+        <div class="mb-sec-head"><h2 class="mb-h">Visítanos<small>Estamos en Cuenca, en la Av. de las Américas</small></h2></div>
+        <div class="mb-loc">
+            <div class="mb-loc-card">
+                <h3 class="mb-h">MDBK Racing Suspensions</h3>
+                <ul class="mb-info">
+                    <li><div><small>Dirección</small><b>Av. de las Américas (junto a la entrada)</b><br/>Cuenca, Azuay</div></li>
+                    <li><div><small>Teléfono y WhatsApp</small><b><a href="tel:+593998724316">099 872 4316</a></b></div></li>
+                    <li><div><small>Correo</small><b><a href="mailto:facturasmadbike@gmail.com">facturasmadbike@gmail.com</a></b></div></li>
+                </ul>
+                <div class="mb-ctas">
+                    <a class="mb-btn" href="https://maps.app.goo.gl/G9dLefC6rMfzB3p17" target="_blank">Cómo llegar</a>
+                    <a class="mb-btn mb-btn-ghost" href="{{WA}}" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+            <div class="mb-map">
+                <iframe src="https://www.google.com/maps?q=MDBK+RACING+SUSPENSIONS,+Av.+de+las+Am%C3%A9ricas,+Cuenca&amp;hl=es&amp;z=17&amp;output=embed" title="Ubicación de MDBK Racing Suspensions en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="mb-fab" href="{{WA}}?text=Hola%2C%20quisiera%20consultar%20por%20un%20servicio" target="_blank" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg></a>
+
+        </div>
+    </t>
+</t>

@@ -1,0 +1,39 @@
+<t name="INGCO" t-name="ebal_madbike.ingco_page">
+    <t t-call="website.layout">
+        <t t-set="pageName" t-value="'ingco'"/>
+        <div id="wrap" class="oe_structure oe_empty mb mb-ingco-page">
+<section class="mb-ingco-hero" data-name="INGCO">
+    <div class="mb-wrap">
+        <h1 class="mb-h">Herramientas INGCO</h1>
+        <p>Herramientas eléctricas, manuales, de jardinería y accesorios INGCO: para profesionales de taller y construcción y para quien trabaja en casa. Mira lo que tenemos disponible y escríbenos si buscas un modelo específico.</p>
+    </div>
+</section>
+<section class="mb-sec" data-name="Productos INGCO">
+    <div class="mb-wrap">
+        <div class="mb-ingco-subs">
+            <a href="/shop/category/{{INGCO_SLUG}}">Todo INGCO</a>
+{{INGCO_SUBS}}
+        </div>
+        <t t-set="items" t-value="request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',{{INGCO_ID}})], order='website_sequence, id desc', limit=60)"/>
+        <t t-set="prices" t-value="items._get_sales_prices(website)"/>
+        <div class="mb-cards" t-if="items">
+            <t t-foreach="items" t-as="p">
+                <a class="mb-card" t-att-href="p.website_url">
+                    <span t-attf-class="mb-card-img #{'' if p.image_128 else 'mb-noimg'}">
+                        <img t-if="p.image_128" t-att-src="website.image_url(p, 'image_512')" t-att-alt="p.name" loading="lazy"/>
+                        <img t-else="" src="{{img:logo_madbike.png}}" alt="" loading="lazy"/>
+                    </span>
+                    <span class="mb-card-body">
+                        <span class="mb-card-code" t-out="p.default_code or ''"/>
+                        <span class="mb-card-name" t-out="p.name"/>
+                        <span class="mb-card-price" t-out="prices.get(p.id, {}).get('price_reduce', p.list_price)" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    </span>
+                </a>
+            </t>
+        </div>
+        <div class="mb-empty" t-else="">Estamos cargando el catálogo INGCO. Escríbenos por <a href="{{WA}}" target="_blank">WhatsApp</a> y te decimos qué hay disponible.</div>
+    </div>
+</section>
+        </div>
+    </t>
+</t>

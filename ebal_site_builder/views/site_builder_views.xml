@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_ebal_site_builder_form" model="ir.ui.view">
+        <field name="name">ebal.site.builder.form</field>
+        <field name="model">ebal.site.builder</field>
+        <field name="arch" type="xml">
+            <form string="Aplicar sitio web">
+                <sheet>
+                    <div class="alert alert-warning" role="alert">
+                        Esto <b>reemplaza la portada, el pie de página, los estilos y el menú</b> del sitio web con
+                        los del módulo. No cambia precios, stock ni nombres de productos. Si ya editaste esas páginas
+                        a mano, se pierden esos cambios (aplicarlo otra vez es seguro).
+                    </div>
+                    <group>
+                        <field name="module"/>
+                        <field name="summary"/>
+                        <field name="whatsapp" invisible="module != 'ebal_diegovelez'"/>
+                        <field name="company_logo" invisible="module != 'ebal_carelectronic'"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_apply" type="object" string="Aplicar sitio" class="btn-primary"
+                            confirm="¿Aplicar este sitio web? Reemplaza la portada y el pie actuales."/>
+                    <button string="Cancelar" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

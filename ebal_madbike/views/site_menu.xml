@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Ventana para cargar el sitio web de este cliente (ver ebal_site_builder). Manual a propósito. -->
+    <record id="action_apply_site" model="ir.actions.act_window">
+        <field name="name">Aplicar sitio de Madbike</field>
+        <field name="res_model">ebal.site.builder</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_module': 'ebal_madbike'}</field>
+    </record>
+    <menuitem id="menu_apply_site" name="Aplicar sitio de Madbike" parent="website.menu_website_configuration"
+              action="action_apply_site" groups="base.group_system" sequence="90"/>
+</odoo>

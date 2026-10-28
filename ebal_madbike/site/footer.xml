@@ -1,0 +1,40 @@
+<data inherit_id="website.layout" name="Default">
+    <xpath expr="//div[@id='footer']" position="replace">
+        <div id="footer" class="oe_structure oe_structure_solo mb-footer" t-ignore="true" t-if="not no_footer">
+            <section class="s_text_block pt48 pb32" data-snippet="s_text_block" data-name="Text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 pb24">
+                            <img class="mb-flogo" src="{{img:logo_madbike.png}}" alt="MDBK Racing Suspensions" loading="lazy"/>
+                            <p class="mt-3">Suspensión, mecánica y preparación de competencia en Cuenca. Tienda de repuestos, lubricantes y herramientas INGCO.</p>
+                        </div>
+                        <div class="col-6 col-lg-2 pb24">
+                            <h5 class="mb-3">Taller</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/#servicios">Servicios</a></li>
+                                <li class="mb-2"><a href="/appointment">Reservas</a></li>
+                                <li class="mb-2"><a href="/consultar-orden">Consultar orden</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-3 pb24">
+                            <h5 class="mb-3">Tienda</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/shop">Todos los productos</a></li>
+                                <li class="mb-2"><a href="/ingco">INGCO</a></li>
+                                <li class="mb-2"><a href="/shop/cart">Mi carrito</a></li>
+                                <li class="mb-2"><a href="/my/orders">Mis pedidos</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 pb24">
+                            <h5 class="mb-3">Visítanos</h5>
+                            <p class="mb-2">Av. de las Américas<br/>Cuenca, Azuay</p>
+                            <p class="mb-1"><a href="tel:+593998724316">099 872 4316</a></p>
+                            <p class="mb-2"><a href="mailto:facturasmadbike@gmail.com">facturasmadbike@gmail.com</a></p>
+                            <a href="/#ubicacion">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </xpath>
+</data>
