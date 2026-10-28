@@ -14,8 +14,8 @@
                     <group>
                         <field name="module"/>
                         <field name="summary"/>
-                        <field name="whatsapp" invisible="module != 'ebal_diegovelez_web'"/>
-                        <field name="company_logo" invisible="module != 'ebal_carelectronic_web'"/>
+                        <field name="whatsapp" invisible="module != 'ebal_diegovelez'"/>
+                        <field name="company_logo" invisible="module != 'ebal_carelectronic'"/>
                     </group>
                 </sheet>
                 <footer>

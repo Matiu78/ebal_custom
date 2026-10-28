@@ -6,7 +6,7 @@
         <field name="res_model">ebal.site.builder</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="context">{'default_module': 'ebal_carelectronic_web'}</field>
+        <field name="context">{'default_module': 'ebal_carelectronic'}</field>
     </record>
     <menuitem id="menu_apply_site" name="Aplicar sitio de Car Electrónic" parent="website.menu_website_configuration"
               action="action_apply_site" groups="base.group_system" sequence="90"/>
