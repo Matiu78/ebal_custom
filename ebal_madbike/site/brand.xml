@@ -32,6 +32,10 @@
                 </a>
             </t>
         </div>
+        <t t-set="total_items" t-value="request.env['product.template'].search_count([('is_published','=',True),('public_categ_ids','child_of',{{B_ID}})])"/>
+        <p class="mt-4 text-center" t-if="items and total_items &gt; len(items)">
+            <a class="mb-btn mb-btn-dark" href="/shop/category/{{B_SLUG}}">Ver todos los productos {{B_NAME}} (<t t-out="total_items"/>)</a>
+        </p>
         <div class="mb-empty" t-else="">Estamos cargando el catálogo {{B_NAME}}. Escríbenos por <a href="{{WA}}" target="_blank">WhatsApp</a> y te decimos qué hay disponible.</div>
     </div>
 </section>

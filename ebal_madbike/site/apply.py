@@ -37,12 +37,12 @@ BRANDS = {
               "title": "Herramientas INGCO",
               "blurb": "Herramientas eléctricas, manuales y accesorios INGCO para el taller, la obra y el hogar. Resistentes, con repuestos y respaldo.",
               "intro": "Herramientas eléctricas, manuales, de jardinería y accesorios INGCO: para profesionales de taller y construcción y para quien trabaja en casa. Mira lo que tenemos disponible y escríbenos si buscas un modelo específico.",
-              "subs": ["Herramientas eléctricas", "Herramientas manuales", "Jardinería", "Accesorios y consumibles"]},
+              "subs": ["Herramientas inalámbricas", "Herramientas eléctricas", "Herramientas manuales", "Herramientas neumáticas", "Herramientas de medición", "Jardinería", "A combustión", "Bombas de agua", "Seguridad industrial", "Accesorios y consumibles"]},
     "wadfow": {"name": "WADFOW", "seq": 6, "color_btn": "Ver productos WADFOW",
                "title": "Herramientas WADFOW",
                "blurb": "Herramientas inalámbricas, eléctricas, neumáticas y manuales WADFOW: potencia y buen precio para el taller y el hogar.",
                "intro": "Herramientas WADFOW: inalámbricas, eléctricas, neumáticas, manuales y de jardinería, con la línea de baterías de 20 V. Mira lo que tenemos disponible y escríbenos si buscas un modelo específico.",
-               "subs": ["Herramientas inalámbricas", "Herramientas eléctricas", "Herramientas neumáticas", "Herramientas manuales", "A combustión", "Jardinería"]},
+               "subs": ["Herramientas inalámbricas", "Herramientas eléctricas", "Herramientas manuales", "Herramientas neumáticas", "Herramientas de medición", "Jardinería", "A combustión", "Bombas de agua", "Seguridad industrial", "Accesorios y consumibles"]},
 }
 for key, b in BRANDS.items():
     b["cat"] = public_cat(b["name"], None, b["seq"])
@@ -214,7 +214,7 @@ def b64(fn):
 es = env["res.lang"].search([("code", "=", "es_EC")], limit=1) or env["res.lang"].search([("code", "=", "es_ES")], limit=1)
 website.write({
     "name": "MDBK Racing Suspensions", "custom_code_head": head, "logo": b64("logo_madbike.png"), "favicon": b64("icono_madbike.png"),
-    "shop_ppg": 24, "shop_ppr": 4, "shop_default_sort": "publish_date desc",
+    "shop_ppg": 24, "prevent_zero_price_sale": True, "shop_ppr": 4, "shop_default_sort": "publish_date desc",
     **({"default_lang_id": es.id} if es else {}),
 })
 RESULT = "Sitio de Madbike aplicado (portada, /ingco, tienda, menú y pie)."
