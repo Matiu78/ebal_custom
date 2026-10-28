@@ -23,6 +23,15 @@ header#top .navbar-toggler-icon,header#top .o_mobile_menu_toggle i{filter:invert
 .mb-gallery figure:hover img{transform:scale(1.06)}
 .mb-gallery .mb-g-big{grid-column:span 2;grid-row:span 2}
 @media(max-width:575px){.mb-gallery{grid-template-columns:1fr 1fr}}
+/* menú desplegable («+» y submenús): fondo blanco, texto oscuro */
+header#top .dropdown-menu{background:#fff}
+header#top .dropdown-menu .nav-link,header#top .dropdown-menu .dropdown-item,header#top .dropdown-menu a:not(.btn){color:#0a0a0a!important;box-shadow:none!important;text-transform:uppercase;font-weight:700;letter-spacing:.04em;font-size:.86rem}
+header#top .dropdown-menu .nav-link:hover,header#top .dropdown-menu .dropdown-item:hover,header#top .dropdown-menu .nav-link.active{background:#f2f2f2;color:#000!important}
+header#top .dropdown-menu a[href^="/ingco"]{color:#d97f00!important}
+header#top .dropdown-menu a[href^="/wadfow"]{color:#0033a1!important}
+/* barra más compacta: que INGCO y WADFOW queden juntos y a la vista */
+header#top .navbar-nav .nav-link{padding-left:.6rem!important;padding-right:.6rem!important;font-size:.8rem}
+@media(max-width:1399px){header#top a[href^="tel:"]{display:none!important}}
 /* botones */
 .btn-primary,.mb-btn{background:#0a0a0a;border-color:#0a0a0a;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
 .btn-primary:hover{background:#2b2b2b;border-color:#2b2b2b}
