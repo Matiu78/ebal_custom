@@ -80,10 +80,17 @@ def row(title, sub, link, domain, dark=False):
 </section>''' % {"cls": "mb-sec-grey" if dark else "", "title": title, "sub": sub, "link": link,
                  "domain": domain, "card": card()}
 
+# productos estrella de las franjas de la portada (se completan con la subcategoría de inalámbricas si faltan)
+FEATURED = {
+    "ingco": ["UCIDLI16682", "CIDLI12206", "UCAGLI261521", "CRHLI20248", "HKTHP41482", "UCIWLI2055"],
+    "wadfow": ["UWCD2512", "UWCD1B33", "UWBLP511", "UWVR4A35", "UWLAP522", "WBJ2305"],
+}
+
+
 def band(key):
     """Franja de color de la marca con sus productos adentro (portada)."""
     b = BRANDS[key]
-    return '''<t t-set="items" t-value="request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',%(sub)d)], order='id', limit=6) or request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',%(id)d)], order='id desc', limit=6)"/>
+    return '''<t t-set="items" t-value="request.env['product.template'].search([('is_published','=',True),('default_code','in',%(feat)s)], order='id', limit=6) or request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',%(sub)d)], order='id', limit=6) or request.env['product.template'].search([('is_published','=',True),('public_categ_ids','child_of',%(id)d)], order='id desc', limit=6)"/>
 <t t-set="prices" t-value="items._get_sales_prices(website)"/>
 <section class="mb-brandband mb-b-%(key)s" data-name="%(name)s">
     <div class="mb-wrap">
@@ -97,7 +104,7 @@ def band(key):
             </t>
         </div>
     </div>
-</section>''' % {"id": b["cat"].id, "sub": b["subcats"][0].id, "key": key, "name": b["name"], "title": b["title"], "blurb": b["blurb"],
+</section>''' % {"id": b["cat"].id, "sub": b["subcats"][0].id, "feat": repr(FEATURED[key]), "key": key, "name": b["name"], "title": b["title"], "blurb": b["blurb"],
                  "btn": b["color_btn"], "card": card()}
 
 BAND_INGCO = band("ingco")
