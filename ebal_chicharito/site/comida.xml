@@ -1,0 +1,18 @@
+<t name="Comida rápida" t-name="ebal_chicharito.comida_rapida">
+    <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty chi-fastpage">
+
+<section class="chi-fast-top" style="--fh:url('{{img:hero_fast.webp}}')" data-name="Portada comida rápida">
+  <div class="chi-wrap">
+    <h1>Comida<br/>rápida</h1>
+    <p class="chi-sub">Hot dogs gigantes, bien cargados y listos en un momento.</p>
+    <div class="chi-combo">🥤 TODOS INCLUYEN SU PEPSI</div>
+  </div>
+</section>
+<section data-name="Carta"><div class="chi-wrap"><div class="chi-menu"><div class="chi-item"><div class="chi-price">$2,50</div><img src="{{img:hd1.webp}}" alt="Chicharito clásico" loading="lazy"/><h3>Chicharito clásico</h3><p>Salchicha, papas trituradas, kétchup, mostaza y mayonesa</p></div><div class="chi-item"><div class="chi-price">$2,50</div><img src="{{img:hd2.webp}}" alt="Chicharito de pollo" loading="lazy"/><h3>Chicharito de pollo</h3><p>Con pollo desmenuzado, mostaza y kétchup</p></div><div class="chi-item"><div class="chi-price">$3,50</div><img src="{{img:hd3.webp}}" alt="Chicharito de res" loading="lazy"/><h3>Chicharito de res</h3><p>Con carne de res, maíz y mayonesa</p></div><div class="chi-item"><div class="chi-price">$3,50</div><img src="{{img:hd4.webp}}" alt="Chicharito ranchero" loading="lazy"/><h3>Chicharito ranchero</h3><p>Con repollo, pimiento verde y queso rallado</p></div><div class="chi-item"><div class="chi-price">$1,50</div><img src="{{img:hd5.webp}}" alt="Mini Chicharito" loading="lazy"/><h3>Mini Chicharito</h3><p>Pequeñito para el antojo de siempre</p></div></div></div></section>
+<div class="chi-note">¿ANTOJO? PÍDELO POR WHATSAPP · 099 583 9890</div>
+<section class="chi-sec text-center"><div class="chi-wrap"><a href="https://wa.me/593995839890?text=Hola%2C%20quisiera%20pedir%20comida%20r%C3%A1pida" target="_blank" class="chi-btn chi-btn-wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.2.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.8-.2 1.5z"/></svg>Hacer mi pedido</a></div></section>
+
+        </div>
+    </t>
+</t>

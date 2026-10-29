@@ -1,0 +1,115 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Bebas+Neue&amp;family=Pacifico&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--b:#0b6ef3;--b2:#0a56c2;--sky:#cfe6ff;--navy:#0a2a6b;--ink:#0c1f4a;--sun:#ffc21a;--org:#f59b2d;--red:#e63946;--pink:#ff7aa8;--pink2:#ffe6ef;--lilac:#ece2ff;--cream:#fff8ec;}
+body{font-family:"Nunito",system-ui,sans-serif;color:var(--ink);background:#fff;}
+h1,h2,h3,h4,.chi-h{font-family:"Baloo 2","Nunito",sans-serif;font-weight:800;line-height:1.05;}
+html{scroll-behavior:smooth;}
+/* ---------- Encabezado ---------- */
+header#top{background:#fff!important;border-bottom:5px solid var(--b);box-shadow:0 6px 18px rgba(11,110,243,.12);}
+header#top .navbar-brand img{height:62px;width:auto;}
+header#top .nav-link{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.05rem;color:var(--navy)!important;border-radius:999px;padding:.35rem 1rem!important;margin:0 .1rem;}
+header#top .nav-link:hover,header#top .nav-link.active{background:var(--sky);color:var(--b2)!important;}
+header#top .dropdown-menu .dropdown-item{color:var(--navy)!important;}
+/* ---------- Piezas comunes ---------- */
+.btn-primary{background:var(--b)!important;border-color:var(--b)!important;color:#fff!important;border-radius:999px;font-family:"Baloo 2",sans-serif;font-weight:700;}
+.btn-primary:hover{background:var(--b2)!important;}
+header#top .btn-outline-primary,header#top .btn-secondary{border-radius:999px;}
+.chi-wrap{max-width:1180px;margin:0 auto;padding:0 18px;}
+.chi-btn{display:inline-flex;align-items:center;gap:.5rem;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.1rem;padding:.7rem 1.5rem;border-radius:999px;text-decoration:none!important;border:3px solid var(--ink);box-shadow:0 5px 0 var(--ink);transition:transform .12s,box-shadow .12s;}
+.chi-btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--ink);}
+.chi-btn-sun{background:var(--sun);color:var(--ink)!important;}
+.chi-btn-pink{background:var(--pink);color:#fff!important;}
+.chi-btn-blue{background:var(--b);color:#fff!important;}
+.chi-btn-wa{background:#25d366;color:#fff!important;}
+.chi-btn svg{width:22px;height:22px;fill:currentColor;}
+.chi-eyebrow{display:inline-block;font-family:"Baloo 2",sans-serif;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem;padding:.25rem .9rem;border-radius:999px;background:var(--sun);color:var(--ink);}
+.chi-wave{display:block;width:100%;height:60px;}
+.chi-sec{padding:64px 0;}
+.chi-sec h2{font-size:clamp(2rem,4.5vw,3.2rem);}
+/* ---------- Portada ---------- */
+.chi-hero{position:relative;background:radial-gradient(circle at 78% 30%,#2b8bff 0,var(--b) 45%,var(--b2) 100%);color:#fff;overflow:hidden;}
+.chi-hero .chi-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center;padding-top:56px;padding-bottom:30px;}
+.chi-hero h1{font-size:clamp(2.6rem,6.5vw,5rem);color:#fff;text-shadow:0 4px 0 rgba(10,42,107,.35);}
+.chi-hero h1 em{font-style:normal;color:var(--sun);}
+.chi-hero p.lead{font-size:1.25rem;font-weight:700;max-width:34rem;margin:1rem 0 1.6rem;}
+.chi-hero .chi-ctas{display:flex;flex-wrap:wrap;gap:14px;}
+.chi-hero-img{border-radius:36px;box-shadow:0 20px 50px rgba(10,42,107,.45);transform:rotate(2deg);border:6px solid #fff;width:100%;}
+.chi-hero .chi-conf{position:absolute;border-radius:50%;opacity:.5;}
+@media(max-width:860px){.chi-hero .chi-wrap{grid-template-columns:1fr;}.chi-hero-img{transform:none;}}
+/* ---------- Dos mundos ---------- */
+.chi-two{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.chi-card2{position:relative;border-radius:34px;overflow:hidden;min-height:340px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none!important;border:4px solid var(--ink);box-shadow:0 8px 0 var(--ink);transition:transform .15s;}
+.chi-card2:hover{transform:translateY(-4px) rotate(-.6deg);}
+.chi-card2 img{position:absolute;right:22px;top:22px;width:52%;border-radius:26px;border:4px solid #fff;transform:rotate(4deg);box-shadow:0 10px 24px rgba(0,0,0,.25);}
+.chi-card2 h3{font-size:2.3rem;position:relative;margin:0;}
+.chi-card2 span{position:relative;font-weight:800;}
+.chi-card2.fast{background:var(--navy);color:#fff;}
+.chi-card2.fast h3{font-family:"Bebas Neue",sans-serif;font-size:3rem;letter-spacing:.04em;color:var(--sun);}
+.chi-card2.sweet{background:var(--pink2);color:var(--ink);}
+.chi-card2.sweet h3{font-family:"Pacifico",cursive;font-weight:400;color:#e0457b;font-size:2.4rem;}
+@media(min-width:761px){.chi-card2 h3,.chi-card2 span{max-width:50%;}}
+@media(max-width:760px){.chi-two{grid-template-columns:1fr;}}
+/* ---------- Más pedidos ---------- */
+.chi-favs{background:var(--cream);}
+.chi-grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;}
+.chi-fav{background:#fff;border-radius:28px;border:3px solid var(--ink);box-shadow:0 6px 0 var(--ink);padding:14px 14px 22px;text-align:center;position:relative;}
+.chi-fav img{width:100%;border-radius:20px;}
+.chi-fav h4{font-size:1.5rem;margin:.6rem 0 .1rem;}
+.chi-price{position:absolute;top:-14px;right:-8px;background:var(--sun);color:var(--ink);font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.35rem;width:78px;height:78px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid var(--ink);transform:rotate(10deg);}
+/* ---------- Franja ---------- */
+.chi-marq{background:var(--sun);border-block:4px solid var(--ink);overflow:hidden;white-space:nowrap;}
+.chi-marq div{display:inline-block;padding:12px 0;font-family:"Bebas Neue",sans-serif;font-size:1.7rem;letter-spacing:.08em;animation:chi-m 28s linear infinite;}
+@keyframes chi-m{to{transform:translateX(-50%);}}
+/* ---------- Postres en portada ---------- */
+.chi-sweet-band{background:linear-gradient(180deg,#fff,var(--pink2));}
+.chi-sweet-band img.wide{width:100%;border-radius:36px;border:6px solid #fff;box-shadow:0 16px 40px rgba(224,69,123,.25);}
+.chi-script{font-family:"Pacifico",cursive;font-weight:400;color:#e0457b;}
+/* ---------- Visítanos ---------- */
+.chi-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.chi-info div{background:var(--sky);border-radius:28px;padding:26px;border:3px solid var(--ink);}
+.chi-info h4{font-size:1.4rem;margin-bottom:.4rem;}
+/* ---------- Comida rápida (página) ---------- */
+body:has(.chi-fastpage),body:has(.chi-fastpage) #wrapwrap{background:var(--navy);}
+.chi-fastpage{color:#fff;}
+.chi-fast-top{position:relative;padding:70px 0 90px;background:linear-gradient(100deg,rgba(10,42,107,.95) 35%,rgba(10,42,107,.35)),var(--fh) center/cover;clip-path:polygon(0 0,100% 0,100% 88%,0 100%);}
+.chi-fastpage h1{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:clamp(3.4rem,10vw,7.5rem);letter-spacing:.03em;color:var(--sun);text-shadow:5px 5px 0 var(--red);line-height:.95;}
+.chi-fastpage .chi-sub{font-size:1.3rem;font-weight:800;max-width:30rem;}
+.chi-combo{display:inline-flex;gap:10px;align-items:center;background:var(--red);color:#fff;font-family:"Bebas Neue",sans-serif;font-size:1.6rem;letter-spacing:.06em;padding:8px 22px;transform:rotate(-2deg);border:3px solid #fff;margin-top:18px;}
+.chi-menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;padding:20px 0 70px;}
+.chi-item{position:relative;background:#0f367f;border:3px solid var(--sun);border-radius:10px 40px 10px 40px;padding:18px;box-shadow:8px 8px 0 var(--red);}
+.chi-item img{width:100%;border-radius:8px 30px 8px 30px;background:var(--b);}
+.chi-item h3{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:2.2rem;letter-spacing:.05em;color:#fff;margin:.7rem 0 .2rem;}
+.chi-item p{color:#cfe0ff;font-weight:700;margin:0;}
+.chi-item .chi-price{top:-22px;right:-14px;background:var(--red);color:#fff;border-color:#fff;width:88px;height:88px;font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:2rem;}
+.chi-note{background:var(--sun);color:var(--ink);font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:.06em;text-align:center;padding:14px;border-block:4px solid var(--ink);}
+/* ---------- Postres (página) ---------- */
+body:has(.chi-sweetpage),body:has(.chi-sweetpage) #wrapwrap{background:linear-gradient(180deg,var(--pink2),#fff 40%,var(--lilac));}
+.chi-sweetpage{position:relative;overflow:hidden;}
+.chi-sweetpage::before,.chi-sweetpage::after{content:"♥ ✦ ♥ ✦ ♥ ✦ ♥";position:absolute;left:0;right:0;text-align:center;color:#ffb3cb;font-size:2rem;letter-spacing:1.2rem;opacity:.7;animation:chi-f 5s ease-in-out infinite;}
+.chi-sweetpage::before{top:18px;}
+.chi-sweetpage::after{bottom:10px;animation-delay:2s;}
+@keyframes chi-f{50%{transform:translateY(8px);}}
+.chi-sweet-hero{text-align:center;padding:64px 0 30px;}
+.chi-sweet-hero h1{font-family:"Pacifico",cursive;font-weight:400;font-size:clamp(3rem,9vw,6rem);color:#e0457b;text-shadow:3px 3px 0 #fff;}
+.chi-sweet-hero p{font-size:1.25rem;font-weight:700;max-width:34rem;margin:.6rem auto 0;}
+.chi-sweet-hero img{width:100%;max-width:980px;border-radius:44px;border:8px solid #fff;box-shadow:0 18px 40px rgba(224,69,123,.25);margin-top:28px;}
+.chi-sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;padding:30px 0 70px;position:relative;}
+.chi-sw{background:#fff;border-radius:40px;padding:14px 14px 24px;text-align:center;border:4px dashed #ffb3cb;box-shadow:0 10px 24px rgba(224,69,123,.15);transition:transform .2s;}
+.chi-sw:nth-child(3n+2){border-color:#c6aaff;}
+.chi-sw:nth-child(3n){border-color:#8ed1ff;}
+.chi-sw:hover{transform:translateY(-6px) rotate(-1.2deg);}
+.chi-sw img{width:100%;border-radius:30px;}
+.chi-sw h3{font-size:1.55rem;margin:.7rem 0 .4rem;color:var(--ink);}
+.chi-pill{display:inline-block;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:.9rem;padding:.2rem .9rem;border-radius:999px;background:var(--pink2);color:#e0457b;border:2px solid #ffb3cb;margin:0 .15rem .5rem;}
+.chi-pill.big{background:var(--lilac);color:#7a4fd6;border-color:#c6aaff;}
+.chi-ask{text-align:center;padding:10px 0 60px;}
+/* ---------- Pie ---------- */
+.chi-footer{background:var(--navy);color:#dbe8ff;}
+.chi-footer a{color:#fff;text-decoration:none;}
+.chi-footer a:hover{color:var(--sun);}
+.chi-footer h5{font-family:"Baloo 2",sans-serif;color:var(--sun);}
+.chi-flogo{height:110px;background:#fff;border-radius:50%;padding:4px;}
+.o_footer_copyright{background:#061a47!important;color:#9db8ee!important;}
+</style>

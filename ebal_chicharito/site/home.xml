@@ -1,0 +1,51 @@
+<t name="Homepage" t-name="website.homepage">
+    <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty chi">
+
+<section class="chi-hero" data-name="Portada">
+  <div class="chi-wrap">
+    <div>
+      <span class="chi-eyebrow">Sabores que sorprenden · Cuenca</span>
+      <h1 class="mt-3">Hot dogs que te hacen <em>sonreír</em></h1>
+      <p class="lead">Los chicharitos más ricos de Cuenca, con su Pepsi incluida. Y de postre, algo dulce y tierno para cerrar con broche de oro.</p>
+      <div class="chi-ctas">
+        <a href="/comida-rapida" class="chi-btn chi-btn-sun">Comida rápida</a>
+        <a href="/postres" class="chi-btn chi-btn-pink">Postres</a>
+      </div>
+    </div>
+    <img class="chi-hero-img" src="{{img:hero_fast.webp}}" alt="Hot dogs El Chicharito"/>
+  </div>
+  <svg class="chi-wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#ffffff" d="M0 30 Q 90 0 180 30 T 360 30 T 540 30 T 720 30 T 900 30 T 1080 30 T 1260 30 T 1440 30 V60 H0Z"/></svg>
+</section>
+<section class="chi-sec" data-name="Dos mundos"><div class="chi-wrap">
+  <div class="text-center mb-5"><h2>¿Qué se te antoja hoy?</h2></div>
+  <div class="chi-two">
+    <a href="/comida-rapida" class="chi-card2 fast"><img src="{{img:hd3.webp}}" alt=""/><h3>Comida rápida</h3><span>Hot dogs, papas y mucho sabor →</span></a>
+    <a href="/postres" class="chi-card2 sweet"><img src="{{img:cheesecake.webp}}" alt=""/><h3>Postrecitos</h3><span>Cheesecakes, tortas, colada morada y más →</span></a>
+  </div>
+</div></section>
+<div class="chi-marq"><div>HOT DOGS ★ POSTRES ★ COLADA MORADA ★ GUAGUAS DE PAN ★ CHEESECAKES ★ RED VELVET ★ GALLETAS ★ HOT DOGS ★ POSTRES ★ COLADA MORADA ★ GUAGUAS DE PAN ★ CHEESECAKES ★ RED VELVET ★ GALLETAS ★ HOT DOGS ★ POSTRES ★ COLADA MORADA ★ GUAGUAS DE PAN ★ CHEESECAKES ★ RED VELVET ★ GALLETAS ★ HOT DOGS ★ POSTRES ★ COLADA MORADA ★ GUAGUAS DE PAN ★ CHEESECAKES ★ RED VELVET ★ GALLETAS ★ </div></div>
+<section class="chi-sec chi-favs" data-name="Más pedidos"><div class="chi-wrap">
+  <div class="text-center mb-5"><span class="chi-eyebrow">Los favoritos</span><h2 class="mt-3">Los más pedidos</h2><p class="fw-bold">Todos incluyen su Pepsi 🥤</p></div>
+  <div class="chi-grid3"><div class="chi-fav"><div class="chi-price">$2,50</div><img src="{{img:hd1.webp}}" alt="Chicharito clásico" loading="lazy"/><h4>Chicharito clásico</h4><p class="mb-0">Salchicha, papas trituradas, kétchup, mostaza y mayonesa</p></div><div class="chi-fav"><div class="chi-price">$3,50</div><img src="{{img:hd3.webp}}" alt="Chicharito de res" loading="lazy"/><h4>Chicharito de res</h4><p class="mb-0">Con carne de res, maíz y mayonesa</p></div><div class="chi-fav"><div class="chi-price">$3,50</div><img src="{{img:hd4.webp}}" alt="Chicharito ranchero" loading="lazy"/><h4>Chicharito ranchero</h4><p class="mb-0">Con repollo, pimiento verde y queso rallado</p></div></div>
+  <div class="text-center mt-5"><a href="/comida-rapida" class="chi-btn chi-btn-blue">Ver toda la carta</a></div>
+</div></section>
+<section class="chi-sec chi-sweet-band" data-name="Postres"><div class="chi-wrap text-center">
+  <span class="chi-script" style="font-size:2rem">algo dulce para ti</span>
+  <h2 class="mt-2">Postres hechos con cariño</h2>
+  <p class="fw-bold mb-4">Cheesecakes, tortas red velvet y de chocolate (en porción o enteras), galletas, colada morada y guaguas de pan.</p>
+  <img class="wide" src="{{img:hero_postres.webp}}" alt="Postres El Chicharito" loading="lazy"/>
+  <div class="mt-4"><a href="/postres" class="chi-btn chi-btn-pink">Ver los postres</a></div>
+</div></section>
+<section class="chi-sec" data-name="Visítanos" id="visitanos"><div class="chi-wrap">
+  <div class="text-center mb-5"><h2>Ven a visitarnos</h2></div>
+  <div class="chi-info">
+    <div><h4>📍 Dónde estamos</h4><p class="mb-0">Calle del Hinojo y calle del Matorral<br/>Cuenca, Ecuador</p></div>
+    <div><h4>📱 Pide por WhatsApp</h4><p><a href="tel:+593995839890">099 583 9890</a></p><a href="https://wa.me/593995839890?text=Hola%2C%20quisiera%20hacer%20un%20pedido" target="_blank" class="chi-btn chi-btn-wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.2.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.8-.2 1.5z"/></svg>Escríbenos</a></div>
+    <div><h4>💙 Síguenos</h4><p class="mb-0"><a href="https://www.facebook.com/profile.php?id=61591572278604" target="_blank">El Chicharito en Facebook</a></p></div>
+  </div>
+</div></section>
+
+        </div>
+    </t>
+</t>
