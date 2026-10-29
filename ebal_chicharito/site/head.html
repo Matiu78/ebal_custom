@@ -112,4 +112,83 @@ body:has(.chi-sweetpage),body:has(.chi-sweetpage) #wrapwrap{background:linear-gr
 .chi-footer h5{font-family:"Baloo 2",sans-serif;color:var(--sun);}
 .chi-flogo{height:110px;background:#fff;border-radius:50%;padding:4px;}
 .o_footer_copyright{background:#061a47!important;color:#9db8ee!important;}
+/* ---------- Pedidos ---------- */
+.chi-add{margin-top:.6rem;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1rem;padding:.35rem 1.2rem;border-radius:999px;background:var(--sun);color:var(--ink);border:3px solid var(--ink);box-shadow:0 4px 0 var(--ink);cursor:pointer;transition:transform .1s,box-shadow .1s;}
+.chi-add:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink);}
+.chi-add-pink{background:var(--pink);color:#fff;}
+.chi-item .chi-add{background:var(--red);color:#fff;border-color:#fff;box-shadow:0 4px 0 #fff;margin-top:.8rem;}
+.chi-sprice{position:absolute;top:-12px;right:-6px;background:var(--pink);color:#fff;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.25rem;width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 4px 10px rgba(224,69,123,.4);transform:rotate(10deg);}
+.chi-sw{position:relative;}
+.chi-split{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;}
+.chi-sweet-hero .chi-split{text-align:left;}
+.chi-sweet-hero .chi-split p{margin-left:0;}
+.chi-mom{width:100%;max-width:420px;justify-self:center;border-radius:46px;border:8px solid #fff;box-shadow:0 18px 40px rgba(224,69,123,.28);transform:rotate(2deg);}
+@media(max-width:860px){.chi-split{grid-template-columns:1fr;text-align:center!important;}.chi-sweet-hero .chi-split{text-align:center;}}
+#chi-fab{position:fixed;right:18px;bottom:18px;z-index:1040;display:none;align-items:center;gap:.5rem;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.1rem;padding:.7rem 1.3rem;border-radius:999px;background:#25d366;color:#fff;border:3px solid var(--ink);box-shadow:0 5px 0 var(--ink);cursor:pointer;}
+#chi-fab b{background:#fff;color:var(--ink);border-radius:999px;padding:0 .55rem;}
+#chi-panel{position:fixed;inset:0;z-index:1050;display:none;background:rgba(10,42,107,.55);align-items:flex-end;justify-content:center;}
+#chi-panel.open{display:flex;}
+#chi-box{background:#fff;width:min(560px,100%);max-height:92vh;overflow:auto;border-radius:30px 30px 0 0;padding:22px 20px 26px;border:4px solid var(--ink);border-bottom:0;}
+#chi-box h3{margin:0 0 .6rem;font-size:1.7rem;}
+.chi-row{display:flex;align-items:center;gap:10px;padding:.5rem 0;border-bottom:2px dashed #cfe0ff;font-weight:700;}
+.chi-row span.n{flex:1;}
+.chi-row button{width:32px;height:32px;border-radius:50%;border:2px solid var(--ink);background:var(--sun);font-weight:800;line-height:1;}
+.chi-row .q{min-width:1.6rem;text-align:center;}
+#chi-box input,#chi-box select,#chi-box textarea{width:100%;border:2px solid var(--ink);border-radius:14px;padding:.5rem .8rem;margin-top:.5rem;font-family:"Nunito",sans-serif;}
+#chi-total{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.2rem;margin:.8rem 0 .2rem;}
+#chi-close{float:right;border:0;background:var(--sky);border-radius:50%;width:38px;height:38px;font-weight:800;}
 </style>
+<script>
+(function(){
+  var WA="593995839890",cart={};
+  try{cart=JSON.parse(localStorage.getItem("chi_cart")||"{}");}catch(e){}
+  function save(){try{localStorage.setItem("chi_cart",JSON.stringify(cart));}catch(e){}}
+  function money(n){return "$"+n.toFixed(2).replace(".",",");}
+  function count(){var c=0;for(var k in cart)c+=cart[k].q;return c;}
+  function el(html){var d=document.createElement("div");d.innerHTML=html;return d.firstChild;}
+  function build(){
+    if(document.getElementById("chi-fab"))return;
+    document.body.appendChild(el('<button id="chi-fab" type="button">🛒 Mi pedido <b>0</b></button>'));
+    document.body.appendChild(el('<div id="chi-panel"><div id="chi-box"></div></div>'));
+    refresh();
+  }
+  function refresh(){
+    var fab=document.getElementById("chi-fab");if(!fab)return;
+    var n=count();fab.style.display=n?"inline-flex":"none";fab.querySelector("b").textContent=n;
+    var box=document.getElementById("chi-box"),keep={};
+    ["chi-name","chi-mode","chi-addr"].forEach(function(i){var f=document.getElementById(i);if(f)keep[i]=f.value;});
+    var rows="",tot=0,sin=false;
+    for(var k in cart){var it=cart[k];if(it.p>0)tot+=it.p*it.q;else sin=true;
+      rows+='<div class="chi-row"><span class="n">'+it.n.replace(/</g,"&lt;")+(it.p>0?" · "+money(it.p):"")+'</span><button type="button" data-chi="-" data-k="'+k+'">−</button><span class="q">'+it.q+'</span><button type="button" data-chi="+" data-k="'+k+'">+</button></div>';}
+    box.innerHTML='<button id="chi-close" type="button" data-chi="x">✕</button><h3>🛒 Mi pedido</h3>'+(rows||'<p>Tu pedido está vacío.</p>')+
+      (rows?'<div id="chi-total">'+(tot?"Total aprox.: "+money(tot):"")+(sin?'<div style="font-size:.9rem;font-weight:700">Los postres sin precio te los confirmamos por WhatsApp.</div>':"")+'</div>'+
+      '<input id="chi-name" placeholder="Tu nombre"/><select id="chi-mode"><option>Retiro en el local</option><option>Entrega a domicilio</option></select><input id="chi-addr" placeholder="Dirección o referencia (si es a domicilio)"/>'+
+      '<button type="button" class="chi-btn chi-btn-wa mt-3" data-chi="send" style="width:100%;justify-content:center">Enviar pedido por WhatsApp</button>':"");
+    for(var i in keep){var f=document.getElementById(i);if(f)f.value=keep[i];}
+  }
+  function open(v){document.getElementById("chi-panel").classList.toggle("open",v);}
+  function send(){
+    var nm=(document.getElementById("chi-name").value||"").trim(),mode=document.getElementById("chi-mode").value,ad=(document.getElementById("chi-addr").value||"").trim();
+    var t="Hola, quisiera hacer este pedido:%0A",tot=0;
+    for(var k in cart){var it=cart[k];t+="- "+it.q+" x "+encodeURIComponent(it.n)+(it.p>0?" ("+encodeURIComponent(money(it.p*it.q))+")":"")+"%0A";if(it.p>0)tot+=it.p*it.q;}
+    if(tot)t+="Total aprox.: "+encodeURIComponent(money(tot))+"%0A";
+    t+=encodeURIComponent(mode)+(nm?"%0ANombre: "+encodeURIComponent(nm):"")+(ad?"%0ADirección: "+encodeURIComponent(ad):"");
+    window.open("https://wa.me/"+WA+"?text="+t,"_blank");
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest(".chi-add");
+    if(a){build();var n=a.dataset.name,p=parseFloat(a.dataset.price)||0;cart[n]=cart[n]||{n:n,p:p,q:0};cart[n].q++;save();refresh();
+      a.textContent="✓ Agregado";setTimeout(function(){a.textContent="+ Agregar";},900);return;}
+    var o=e.target.closest&&e.target.closest(".chi-open-cart");
+    if(o){e.preventDefault();build();open(true);return;}
+    if(e.target.id==="chi-fab"||(e.target.closest&&e.target.closest("#chi-fab"))){open(true);return;}
+    if(e.target.id==="chi-panel"){open(false);return;}
+    var b=e.target.closest&&e.target.closest("[data-chi]");
+    if(!b)return;var act=b.dataset.chi,k=b.dataset.k;
+    if(act==="x")open(false);
+    else if(act==="send")send();
+    else if(cart[k]){cart[k].q+=act==="+"?1:-1;if(cart[k].q<=0)delete cart[k];save();refresh();}
+  });
+  if(document.readyState!=="loading")build();else document.addEventListener("DOMContentLoaded",build);
+})();
+</script>

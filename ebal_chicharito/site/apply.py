@@ -9,6 +9,7 @@ MIME = {".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg"}
 
 # 1) imágenes públicas -> url
 urls = {}
+Att.search([("name", "=", "sitio_web_hero_postres.webp"), ("res_model", "=", "website")]).unlink()  # ya no se usa
 for root, _dirs, files in os.walk(D + "assets"):
     for fn in sorted(files):
         raw = open(os.path.join(root, fn), "rb").read()
@@ -105,17 +106,18 @@ website.write({"custom_code_head": open(D + "head.html").read(), "logo": b64("lo
 # 7) postres en el inventario (sin precio), para usarlos en el punto de venta
 Cat = env["pos.category"]
 cat = Cat.search([("name", "=", "Postres")], limit=1) or Cat.create({"name": "Postres"})
-POSTRES = [("Cheesecake de fresa (porción)", "cheesecake"), ("Cheesecake de fresa (entero)", "cheesecake_entero"),
+POSTRES = [("Cuchareable de red velvet", "cuchareable_redvelvet", 3.5), ("Cuchareable de chocolate", "cuchareable_chocolate", 3.5),("Cheesecake de fresa (porción)", "cheesecake"), ("Cheesecake de fresa (entero)", "cheesecake_entero"),
            ("Torta de chocolate (porción)", "torta_chocolate"), ("Torta de chocolate (entera)", "torta_chocolate_entera"),
            ("Red velvet (porción)", "red_velvet"), ("Red velvet (entera)", "red_velvet_entera"),
            ("Galletas", "galletas"), ("Colada morada", "colada_morada"), ("Guaguas de pan", "guaguas")]
 Tpl = env["product.template"]
 tax = env["account.tax"].search([("type_tax_use", "=", "sale"), ("amount", "=", 15), ("amount_type", "=", "percent")], limit=1)
 made = 0
-for pname, img in POSTRES:
+for pname, img, *pr in [(x + (0.0,))[:3] if len(x) == 2 else x for x in POSTRES]:
+    price = pr[0]
     if Tpl.search_count([("name", "=", pname)]):
         continue
-    Tpl.create({"name": pname, "list_price": 0.0, "type": "consu", "is_storable": False, "sale_ok": True,
+    Tpl.create({"name": pname, "list_price": price, "type": "consu", "is_storable": False, "sale_ok": True,
                 "available_in_pos": True, "pos_categ_ids": [(6, 0, cat.ids)], "image_1920": b64(img + ".webp"),
                 "taxes_id": [(6, 0, tax.ids)]})
     made += 1
