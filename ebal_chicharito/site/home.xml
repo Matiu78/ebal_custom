@@ -7,13 +7,13 @@
     <div>
       <span class="chi-eyebrow">Sabores que sorprenden · Cuenca</span>
       <h1 class="mt-3">Hot dogs que te hacen <em>sonreír</em></h1>
-      <p class="lead">Los chicharitos más ricos de Cuenca, con su Pepsi incluida. Y de postre, algo dulce y tierno para cerrar con broche de oro.</p>
+      <p class="lead">Los chicharitos más ricos de Cuenca, con su Pepsi incluida.</p>
       <div class="chi-ctas">
         <a href="/comida-rapida" class="chi-btn chi-btn-sun">Comida rápida</a>
         <a href="/postres" class="chi-btn chi-btn-pink">Postres</a>
       </div>
     </div>
-    <img class="chi-hero-img" src="{{img:hero_fast.webp}}" alt="Hot dogs El Chicharito"/>
+    <img class="chi-hero-img" src="{{img:hero_home.webp}}" alt="Hot dogs y postres El Chicharito"/>
   </div>
   <svg class="chi-wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#ffffff" d="M0 30 Q 90 0 180 30 T 360 30 T 540 30 T 720 30 T 900 30 T 1080 30 T 1260 30 T 1440 30 V60 H0Z"/></svg>
 </section>
