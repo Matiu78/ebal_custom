@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_gala" model="ir.ui.view">
+        <field name="name">product.template.form.gala</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="gala_state" invisible="not gala_state"/>
+                <field name="gala_qty" invisible="not gala_state"/>
+                <field name="gala_price" invisible="not gala_state"/>
+                <field name="gala_synced_at" invisible="not gala_state"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_gala_sync" model="ir.actions.server">
+        <field name="name">Sincronizar precios y disponibilidad con Gala</field>
+        <field name="model_id" ref="model_ebal_gala_sync"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_run_sync()</field>
+    </record>
+    <menuitem id="menu_gala_sync" name="Sincronizar con Gala" parent="website.menu_website_configuration"
+              action="action_gala_sync" groups="base.group_system" sequence="91"/>
+
+    <!-- Disponible / No disponible en la tienda (solo productos ligados a Gala) -->
+    <template id="tile_availability" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('o_wsale_product_sub')]" position="inside">
+            <small t-if="product.ebal_availability == 'available'" class="ebal-avail text-success fw-semibold">
+                <i class="fa fa-check-circle"/> Disponible
+            </small>
+            <small t-elif="product.ebal_availability == 'unavailable'" class="ebal-avail text-danger fw-semibold">
+                <i class="fa fa-times-circle"/> No disponible
+            </small>
+        </xpath>
+    </template>
+    <template id="product_availability" inherit_id="website_sale.product">
+        <xpath expr="//t[@t-call='website_sale.product_price'][1]" position="after">
+            <div t-if="product.ebal_availability"
+                 t-attf-class="ebal-avail mb-2 fw-semibold #{'text-success' if product.ebal_availability == 'available' else 'text-danger'}">
+                <t t-if="product.ebal_availability == 'available'"><i class="fa fa-check-circle"/> Disponible</t>
+                <t t-else=""><i class="fa fa-times-circle"/> No disponible por el momento</t>
+            </div>
+        </xpath>
+    </template>
+</odoo>
