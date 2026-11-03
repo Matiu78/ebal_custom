@@ -15,10 +15,28 @@
     </div>
 </section>
 
+<style>
+#eb-downloads .eb-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;}
+#eb-downloads .eb-card h3{margin:0;width:auto;max-width:none;}
+#eb-downloads .eb-card p{width:auto;max-width:none;}
+#eb-downloads .eb-dl-head{display:flex;align-items:center;gap:14px;width:100%;}
+#eb-downloads .eb-dl-head img,#eb-downloads .eb-dl-head svg{width:52px;height:52px;border-radius:14px;flex:0 0 52px;object-fit:cover;}
+#eb-downloads .eb-dl-head svg{padding:12px;background:rgba(124,92,255,.14);border:1px solid rgba(124,92,255,.35);stroke:#b9a8ff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+#eb-downloads a.eb-btn{display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:.5rem;white-space:nowrap;width:auto;max-width:none;margin-top:10px;}
+</style>
 <script type="text/javascript">
 (function () {
     var box = document.getElementById('eb-downloads');
     if (!box) { return; }
+    var NS = 'http://www.w3.org/2000/svg';
+    var ICONS = {
+        gamepad: 'M6 12h4M8 10v4M15 13h.01M18 11h.01M17.3 5H6.7a4 4 0 0 0-3.9 3.2L1.6 15a3 3 0 0 0 5.2 2.3L8 16h8l1.2 1.3a3 3 0 0 0 5.2-2.3l-1.2-6.8A4 4 0 0 0 17.3 5z',
+        mobile: 'M7 2h10a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM11 18h2',
+        bridge: 'M3 17h18M5 17V9a7 7 0 0 1 14 0v8M12 9v8',
+        print: 'M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z',
+        ssh: 'M4 5h16v14H4zM8 10l3 2-3 2M13 14h4',
+        box: 'M12 3l8 4v10l-8 4-8-4V7zM12 12l8-4M12 12v9M12 12L4 8'
+    };
     function size(n) { return (Math.round(n / 1048576 * 10) / 10) + ' MB'; }
     function el(tag, cls, text, parent) {
         var e = document.createElement(tag);
@@ -27,20 +45,35 @@
         if (parent) { parent.appendChild(e); }
         return e;
     }
+    function icon(it, parent) {
+        if (it.icon_url) {
+            var img = el('img', '', '', parent);
+            img.src = it.icon_url;
+            img.alt = '';
+            return;
+        }
+        var svg = document.createElementNS(NS, 'svg');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        var path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', ICONS[it.icon] || ICONS.box);
+        svg.appendChild(path);
+        parent.appendChild(svg);
+    }
     fetch('/descargas-files/index.json', {cache: 'no-cache'}).then(function (r) { return r.json(); }).then(function (data) {
         box.textContent = '';
         (data.items || []).forEach(function (it) {
             var card = el('div', 'eb-card', '', box);
-            el('h3', '', it.name, card).style.marginTop = '0';
-            el('span', 'eb-tag', it.platform, el('p', '', '', card));
+            var head = el('div', 'eb-dl-head', '', card);
+            icon(it, head);
+            el('h3', '', it.name, head);
+            el('span', 'eb-tag', it.platform, card);
             el('p', '', it.description, card);
-            var meta = el('p', '', 'Versión ' + it.version + ' · ' + size(it.size) + ' · ' + (it.updated || '').slice(0, 10), card);
-            meta.style.fontSize = '.88rem';
+            el('p', '', 'Versión ' + it.version + ' · ' + size(it.size) + ' · ' + (it.updated || '').slice(0, 10), card).style.fontSize = '.88rem';
             var a = el('a', 'eb-btn eb-btn-main', 'Descargar ↓', card);
             a.href = it.url;
             a.setAttribute('download', '');
             var sha = el('p', 'eb-muted', 'SHA-256: ' + it.sha256, card);
-            sha.style.cssText = 'margin:12px 0 0;font-size:.72rem;word-break:break-all;';
+            sha.style.cssText = 'margin:10px 0 0;font-size:.72rem;word-break:break-all;';
         });
         if (!box.firstChild) { box.textContent = 'Pronto habrá descargas disponibles.'; }
     }).catch(function () {
