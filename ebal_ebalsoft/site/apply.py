@@ -62,6 +62,15 @@ new = ('<data inherit_id="website.layout">\n    <xpath expr="//footer//span[hasc
 for lang in langs:
     cp.with_context(lang=lang, website_id=website.id).write({"arch_db": new})
 
+# 3b) página /descargas (lee /descargas-files/index.json, que mantiene un timer del servidor)
+dl = env["website.page"].search([("url", "=", "/descargas"), ("website_id", "=", website.id)], limit=1)
+if not dl:
+    res = env["website"].with_context(website_id=website.id).new_page(name="Descargas", add_menu=True)
+    dl = env["website.page"].browse(res["page_id"])
+for lang in langs:
+    dl.view_id.with_context(lang=lang).write({"arch_db": fill(open(D + "descargas.xml").read())})
+dl.write({"is_published": True})
+
 # 4) estilos del sitio
 website.write({"custom_code_head": open(D + "head.html").read()})
-RESULT = "Sitio de ebalsoft aplicado (%d imágenes)." % len(urls)
+RESULT = "Sitio de ebalsoft aplicado (%d imágenes, página Descargas)." % len(urls)

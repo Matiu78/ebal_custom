@@ -1,0 +1,54 @@
+<t name="Descargas" t-name="ebal_ebalsoft.descargas">
+    <t t-call="website.layout">
+        <t t-set="pageName" t-value="'descargas'"/>
+        <div id="wrap" class="oe_structure oe_empty eb">
+
+<section class="eb-sec" data-name="Descargas">
+    <div class="eb-wrap">
+        <span class="eb-kicker"><i></i>Descargas</span>
+        <h1 class="eb-h">Instaladores y aplicaciones <span class="eb-grad">EbalSoft</span></h1>
+        <p class="eb-muted">Descarga la última versión de cada programa. Esta lista se actualiza sola cada vez que publicamos una versión nueva.</p>
+        <div class="eb-cards eb-3" id="eb-downloads" style="margin-top:32px;">
+            <p class="eb-muted">Cargando…</p>
+        </div>
+        <p class="eb-muted" style="margin-top:28px;font-size:.9rem;">¿Necesitas ayuda para instalar? Escríbenos desde <a href="/contactus">Contáctanos</a>. La app móvil se actualiza desde dentro de la propia app (Ajustes → Buscar actualizaciones).</p>
+    </div>
+</section>
+
+<script type="text/javascript">
+(function () {
+    var box = document.getElementById('eb-downloads');
+    if (!box) { return; }
+    function size(n) { return (Math.round(n / 1048576 * 10) / 10) + ' MB'; }
+    function el(tag, cls, text, parent) {
+        var e = document.createElement(tag);
+        if (cls) { e.className = cls; }
+        if (text) { e.textContent = text; }
+        if (parent) { parent.appendChild(e); }
+        return e;
+    }
+    fetch('/descargas-files/index.json', {cache: 'no-cache'}).then(function (r) { return r.json(); }).then(function (data) {
+        box.textContent = '';
+        (data.items || []).forEach(function (it) {
+            var card = el('div', 'eb-card', '', box);
+            el('h3', '', it.name, card).style.marginTop = '0';
+            el('span', 'eb-tag', it.platform, el('p', '', '', card));
+            el('p', '', it.description, card);
+            var meta = el('p', '', 'Versión ' + it.version + ' · ' + size(it.size) + ' · ' + (it.updated || '').slice(0, 10), card);
+            meta.style.fontSize = '.88rem';
+            var a = el('a', 'eb-btn eb-btn-main', 'Descargar ↓', card);
+            a.href = it.url;
+            a.setAttribute('download', '');
+            var sha = el('p', 'eb-muted', 'SHA-256: ' + it.sha256, card);
+            sha.style.cssText = 'margin:12px 0 0;font-size:.72rem;word-break:break-all;';
+        });
+        if (!box.firstChild) { box.textContent = 'Pronto habrá descargas disponibles.'; }
+    }).catch(function () {
+        box.textContent = 'No se pudo cargar la lista. Intenta de nuevo en unos minutos.';
+    });
+})();
+</script>
+
+        </div>
+    </t>
+</t>
