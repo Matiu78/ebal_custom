@@ -174,8 +174,8 @@ for key in ("website_sale.products_add_to_cart", "website_sale.products_categori
 # menú
 Menu = env["website.menu"]
 root = website.menu_id
-want = [("Inicio", "/"), ("Servicios", "/#servicios"), ("INGCO", "/ingco"), ("WADFOW", "/wadfow"), ("Cursos", "/slides"),
-        ("Tienda", "/shop"), ("Consultar orden", "/consultar-orden"), ("Reservas", "/appointment"), ("Contáctenos", "/contactus")]
+want = [("Inicio", "/"), ("Servicios", "/#servicios"), ("Consultar orden", "/consultar-orden"), ("INGCO", "/ingco"), ("WADFOW", "/wadfow"),
+        ("Cursos", "/slides"), ("Tienda", "/shop"), ("Reservas", "/appointment"), ("Contáctenos", "/contactus")]
 kids = Menu.search([("website_id", "=", website.id), ("parent_id", "=", root.id)])
 by_url = {m.url: m for m in kids}
 if not env["ir.module.module"].sudo().search_count([("name", "=", "website_slides"), ("state", "=", "installed")]):

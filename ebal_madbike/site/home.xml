@@ -12,6 +12,7 @@
             <p>Suspensión y mecánica de competencia para pilotos de rally, downhill, karting y todoterreno. Calibramos, ajustamos y dejamos tu máquina lista para la largada. Y para tu auto de todos los días, también.</p>
             <div class="mb-ctas">
                 <a href="/appointment" class="mb-btn">Agendar una cita</a>
+                <a href="/consultar-orden" class="mb-btn mb-btn-ghost">Consultar mi orden</a>
                 <a href="/shop" class="mb-btn mb-btn-ghost">Ver la tienda</a>
                 <a href="{{WA}}?text=Hola%2C%20quisiera%20consultar%20por%20un%20servicio" target="_blank" class="mb-btn mb-btn-ghost">WhatsApp</a>
             </div>
