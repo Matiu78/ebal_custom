@@ -22,7 +22,8 @@ class ProductTemplate(models.Model):
         for tmpl in self:
             if not tmpl.gala_state:
                 tmpl.ebal_availability = False
-            elif tmpl.gala_state == "in_stock" or tmpl.qty_available > 0:
+            # sudo: el visitante público no puede leer stock.warehouse (qty_available)
+            elif tmpl.gala_state == "in_stock" or tmpl.sudo().qty_available > 0:
                 tmpl.ebal_availability = "available"
             else:
                 tmpl.ebal_availability = "unavailable"

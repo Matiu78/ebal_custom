@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Madbike — Personalizaciones",
-    "version": "19.0.1.3.0",
+    "version": "19.0.1.3.1",
     "summary": "Ajustes específicos de la instancia Madbike (reportes de "
                "orden de trabajo y proforma) y su sitio web con tienda e INGCO.",
     "author": "EBAL SOFTWARE",
