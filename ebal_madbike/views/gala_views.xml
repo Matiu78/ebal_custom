@@ -20,7 +20,7 @@
         <field name="state">code</field>
         <field name="code">action = model.action_run_sync()</field>
     </record>
-    <menuitem id="menu_gala_sync" name="Sincronizar con Gala" parent="website.menu_website_configuration"
+    <menuitem id="menu_gala_sync" name="Sincronizar con Gala" parent="website.menu_website_global_configuration"
               action="action_gala_sync" groups="base.group_system" sequence="91"/>
 
     <!-- Disponible / No disponible en la tienda (solo productos ligados a Gala) -->
