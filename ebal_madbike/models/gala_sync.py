@@ -44,7 +44,7 @@ class GalaSync(models.AbstractModel):
         if len(data) < MIN_EXPECTED:
             raise UserError(_("Gala devolvió solo %d productos; no se actualizó nada.", len(data)))
         ICP = self.env["ir.config_parameter"].sudo()
-        factor = float(ICP.get_param("ebal_madbike.gala_price_factor", "1.0025"))
+        factor = self._gala_factor()
         now = fields.Datetime.now()
         Template = self.env["product.template"].sudo().with_context(active_test=False)
         variants = self.env["product.product"].sudo().with_context(active_test=False).search(
@@ -58,7 +58,7 @@ class GalaSync(models.AbstractModel):
                 "gala_qty": qty, "gala_price": price, "gala_synced_at": now,
             }
             if price > 0:
-                new_price = round(price * factor, 4)
+                new_price = round(price * factor, 2)
                 if abs(tmpl.list_price - new_price) > 0.0001:
                     vals["list_price"] = new_price
                     changed += 1
@@ -73,6 +73,25 @@ class GalaSync(models.AbstractModel):
             now, len(data), len(seen), changed, len(gone)))
         _logger.info("Gala: web=%d ligados=%d precios=%d ausentes=%d", len(data), len(seen), changed, len(gone))
         return {"web": len(data), "linked": len(seen), "prices": changed, "gone": len(gone)}
+
+    @api.model
+    def _gala_factor(self):
+        return 1 + (self.env.company.gala_price_margin or 0.0) / 100.0
+
+    @api.model
+    def _reprice_from_gala(self):
+        """Recalcula el precio de venta con el último precio de Gala guardado (sin raspar)."""
+        factor = self._gala_factor()
+        tmpls = self.env["product.template"].sudo().with_context(active_test=False).search(
+            [("gala_price", ">", 0)])
+        changed = 0
+        for tmpl in tmpls:
+            new_price = round(tmpl.gala_price * factor, 2)
+            if abs(tmpl.list_price - new_price) > 0.0001:
+                tmpl.list_price = new_price
+                changed += 1
+        _logger.info("Gala: recargo %.4f, precios recalculados: %d", factor, changed)
+        return changed
 
     @api.model
     def action_run_sync(self):
