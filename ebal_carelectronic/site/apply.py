@@ -48,7 +48,7 @@ for lang in langs:
 # 4) menú
 Menu = env["website.menu"]
 root = website.menu_id
-want = [("Inicio", "/"), ("Servicios", "/#servicios"), ("Galería", "/#galeria"), ("Ubicación", "/#ubicacion"),
+want = [("Inicio", "/"), ("Servicios", "/#servicios"), ("Mantenimiento", "/#mantenimiento"), ("Galería", "/#galeria"), ("Ubicación", "/#ubicacion"),
         ("Consultar orden", "/consultar-orden"), ("Contáctenos", "/contactus")]
 kids = Menu.search([("website_id", "=", website.id), ("parent_id", "=", root.id)])
 by_url = {m.url: m for m in kids}
