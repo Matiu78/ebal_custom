@@ -21,6 +21,7 @@
                         <div class="col-6 col-lg-3 pb24">
                             <h5 class="mb-3">Contacto</h5>
                             <ul class="list-unstyled">
+                                <li class="mb-2"><a href="tel:+593983596078">098 359 6078</a></li>
                                 <li class="mb-2"><a href="tel:+593981294927">098 129 4927</a></li>
                                 <li class="mb-2"><a href="tel:+593987973365">098 797 3365</a></li>
                                 <li class="mb-2"><a href="https://wa.me/593981294927" target="_blank">WhatsApp</a></li>

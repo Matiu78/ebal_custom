@@ -35,7 +35,7 @@ page = env["website.page"].search([("url", "=", "/"), ("website_id", "=", websit
 write_arch(page.view_id, fill(open(D + "home.xml").read()))
 page.write({
     "website_meta_title": "Car Electrónic | Electromecánica automotriz en Cuenca",
-    "website_meta_description": "Taller de electromecánica automotriz en San José de Balzay, Cuenca: diagnóstico, electricidad, electrónica, inyección y mantenimiento. Llámanos al 098 129 4927.",
+    "website_meta_description": "Taller de electromecánica automotriz en San José de Balzay, Cuenca: diagnóstico, electricidad, electrónica, inyección y mantenimiento. Llámanos al 098 359 6078.",
     "website_meta_keywords": "electromecánica, diagnóstico automotriz, electricidad automotriz, inyección, mantenimiento, taller, Cuenca",
 })
 
@@ -60,7 +60,7 @@ for m in kids:
         m.unlink()  # solo los de ejemplo de Odoo; "Consultar orden" y "Contáctenos" se mantienen
 
 # 5) textos de ejemplo de Odoo -> datos reales (copia propia del sitio CON sus traducciones)
-PH_PHONE = [("tel:+1 555-555-5556", "tel:+593981294927"), ("+1 555-555-5556", "098 129 4927")]
+PH_PHONE = [("tel:+1 555-555-5556", "tel:+593983596078"), ("+1 555-555-5556", "098 359 6078")]
 def clean(arch):
     for x, y in PH_PHONE + [("3575 Fake Buena Vista Avenue", "Av. Del Tejar y César Andrade y Cordero, Cuenca")]:
         arch = arch.replace(x, y)
